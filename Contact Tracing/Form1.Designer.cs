@@ -44,9 +44,7 @@
             this.lbl_Contact = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.lbl_Email = new System.Windows.Forms.Label();
-            this.lbl_Birthdate = new System.Windows.Forms.Label();
             this.lbl_YearsOld = new System.Windows.Forms.Label();
-            this.dtpckr_Birthdate = new System.Windows.Forms.DateTimePicker();
             this.txt_Age = new System.Windows.Forms.TextBox();
             this.lbl_Age = new System.Windows.Forms.Label();
             this.txt_Others = new System.Windows.Forms.TextBox();
@@ -62,6 +60,8 @@
             this.lbl_PersonalDetails = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,9 +82,7 @@
             this.panel1.Controls.Add(this.lbl_Contact);
             this.panel1.Controls.Add(this.txt_Email);
             this.panel1.Controls.Add(this.lbl_Email);
-            this.panel1.Controls.Add(this.lbl_Birthdate);
             this.panel1.Controls.Add(this.lbl_YearsOld);
-            this.panel1.Controls.Add(this.dtpckr_Birthdate);
             this.panel1.Controls.Add(this.txt_Age);
             this.panel1.Controls.Add(this.lbl_Age);
             this.panel1.Controls.Add(this.txt_Others);
@@ -224,15 +222,6 @@
             this.lbl_Email.TabIndex = 16;
             this.lbl_Email.Text = "label9";
             // 
-            // lbl_Birthdate
-            // 
-            this.lbl_Birthdate.AutoSize = true;
-            this.lbl_Birthdate.Location = new System.Drawing.Point(210, 340);
-            this.lbl_Birthdate.Name = "lbl_Birthdate";
-            this.lbl_Birthdate.Size = new System.Drawing.Size(59, 25);
-            this.lbl_Birthdate.TabIndex = 15;
-            this.lbl_Birthdate.Text = "label8";
-            // 
             // lbl_YearsOld
             // 
             this.lbl_YearsOld.AutoSize = true;
@@ -241,14 +230,6 @@
             this.lbl_YearsOld.Size = new System.Drawing.Size(59, 25);
             this.lbl_YearsOld.TabIndex = 14;
             this.lbl_YearsOld.Text = "label7";
-            // 
-            // dtpckr_Birthdate
-            // 
-            this.dtpckr_Birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpckr_Birthdate.Location = new System.Drawing.Point(210, 300);
-            this.dtpckr_Birthdate.Name = "dtpckr_Birthdate";
-            this.dtpckr_Birthdate.Size = new System.Drawing.Size(300, 31);
-            this.dtpckr_Birthdate.TabIndex = 13;
             // 
             // txt_Age
             // 
@@ -268,70 +249,75 @@
             // 
             // txt_Others
             // 
+            this.txt_Others.Enabled = false;
             this.txt_Others.Location = new System.Drawing.Point(210, 240);
             this.txt_Others.Name = "txt_Others";
             this.txt_Others.Size = new System.Drawing.Size(150, 31);
             this.txt_Others.TabIndex = 10;
+            this.txt_Others.TextChanged += new System.EventHandler(this.txt_Others_TextChanged);
             // 
             // rbttn_Others
             // 
             this.rbttn_Others.AutoSize = true;
             this.rbttn_Others.Location = new System.Drawing.Point(50, 240);
             this.rbttn_Others.Name = "rbttn_Others";
-            this.rbttn_Others.Size = new System.Drawing.Size(141, 29);
+            this.rbttn_Others.Size = new System.Drawing.Size(90, 29);
             this.rbttn_Others.TabIndex = 9;
             this.rbttn_Others.TabStop = true;
-            this.rbttn_Others.Text = "radioButton3";
+            this.rbttn_Others.Text = "Others";
             this.rbttn_Others.UseVisualStyleBackColor = true;
+            this.rbttn_Others.CheckedChanged += new System.EventHandler(this.rbttn_Others_CheckedChanged);
             // 
             // rbttn_Female
             // 
             this.rbttn_Female.AutoSize = true;
             this.rbttn_Female.Location = new System.Drawing.Point(50, 210);
             this.rbttn_Female.Name = "rbttn_Female";
-            this.rbttn_Female.Size = new System.Drawing.Size(141, 29);
+            this.rbttn_Female.Size = new System.Drawing.Size(93, 29);
             this.rbttn_Female.TabIndex = 8;
             this.rbttn_Female.TabStop = true;
-            this.rbttn_Female.Text = "radioButton2";
+            this.rbttn_Female.Text = "Female";
             this.rbttn_Female.UseVisualStyleBackColor = true;
+            this.rbttn_Female.CheckedChanged += new System.EventHandler(this.rbttn_Female_CheckedChanged);
             // 
             // rbttn_Male
             // 
             this.rbttn_Male.AutoSize = true;
             this.rbttn_Male.Location = new System.Drawing.Point(50, 180);
             this.rbttn_Male.Name = "rbttn_Male";
-            this.rbttn_Male.Size = new System.Drawing.Size(141, 29);
+            this.rbttn_Male.Size = new System.Drawing.Size(75, 29);
             this.rbttn_Male.TabIndex = 7;
             this.rbttn_Male.TabStop = true;
-            this.rbttn_Male.Text = "radioButton1";
+            this.rbttn_Male.Text = "Male";
             this.rbttn_Male.UseVisualStyleBackColor = true;
+            this.rbttn_Male.CheckedChanged += new System.EventHandler(this.rbttn_Male_CheckedChanged);
             // 
             // lbl_Gender
             // 
             this.lbl_Gender.AutoSize = true;
             this.lbl_Gender.Location = new System.Drawing.Point(30, 150);
             this.lbl_Gender.Name = "lbl_Gender";
-            this.lbl_Gender.Size = new System.Drawing.Size(59, 25);
+            this.lbl_Gender.Size = new System.Drawing.Size(69, 25);
             this.lbl_Gender.TabIndex = 6;
-            this.lbl_Gender.Text = "label5";
+            this.lbl_Gender.Text = "Gender";
             // 
             // lbl_LastName
             // 
             this.lbl_LastName.AutoSize = true;
             this.lbl_LastName.Location = new System.Drawing.Point(210, 120);
             this.lbl_LastName.Name = "lbl_LastName";
-            this.lbl_LastName.Size = new System.Drawing.Size(59, 25);
+            this.lbl_LastName.Size = new System.Drawing.Size(95, 25);
             this.lbl_LastName.TabIndex = 5;
-            this.lbl_LastName.Text = "label4";
+            this.lbl_LastName.Text = "Last Name";
             // 
             // lbl_FirstName
             // 
             this.lbl_FirstName.AutoSize = true;
             this.lbl_FirstName.Location = new System.Drawing.Point(40, 120);
             this.lbl_FirstName.Name = "lbl_FirstName";
-            this.lbl_FirstName.Size = new System.Drawing.Size(59, 25);
+            this.lbl_FirstName.Size = new System.Drawing.Size(97, 25);
             this.lbl_FirstName.TabIndex = 4;
-            this.lbl_FirstName.Text = "label3";
+            this.lbl_FirstName.Text = "First Name";
             // 
             // txt_LastName
             // 
@@ -339,6 +325,7 @@
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(150, 31);
             this.txt_LastName.TabIndex = 3;
+            this.txt_LastName.TextChanged += new System.EventHandler(this.txt_LastName_TextChanged);
             // 
             // txt_FirstName
             // 
@@ -346,6 +333,7 @@
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(150, 31);
             this.txt_FirstName.TabIndex = 2;
+            this.txt_FirstName.TextChanged += new System.EventHandler(this.txt_FirstName_TextChanged);
             // 
             // lbl_Name
             // 
@@ -354,20 +342,20 @@
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(59, 25);
             this.lbl_Name.TabIndex = 1;
-            this.lbl_Name.Text = "label2";
+            this.lbl_Name.Text = "Name";
             // 
             // lbl_PersonalDetails
             // 
             this.lbl_PersonalDetails.AutoSize = true;
             this.lbl_PersonalDetails.Location = new System.Drawing.Point(10, 10);
             this.lbl_PersonalDetails.Name = "lbl_PersonalDetails";
-            this.lbl_PersonalDetails.Size = new System.Drawing.Size(59, 25);
+            this.lbl_PersonalDetails.Size = new System.Drawing.Size(136, 25);
             this.lbl_PersonalDetails.TabIndex = 0;
-            this.lbl_PersonalDetails.Text = "label1";
+            this.lbl_PersonalDetails.Text = "Personal Details";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(890, 70);
+            this.textBox1.Location = new System.Drawing.Point(880, 30);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(320, 160);
@@ -383,11 +371,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1080, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 34);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(890, 220);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(330, 110);
+            this.textBox2.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
@@ -402,7 +410,6 @@
         #endregion
 
         private Panel panel1;
-        private DateTimePicker dtpckr_Birthdate;
         private TextBox txt_Age;
         private Label lbl_Age;
         private TextBox txt_Others;
@@ -431,9 +438,10 @@
         private Label lbl_Contact;
         private TextBox txt_Email;
         private Label lbl_Email;
-        private Label lbl_Birthdate;
         private Label lbl_YearsOld;
         private TextBox textBox1;
         private Button button1;
+        private Button button2;
+        private TextBox textBox2;
     }
 }
