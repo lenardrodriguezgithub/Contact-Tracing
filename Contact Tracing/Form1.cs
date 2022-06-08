@@ -11,8 +11,8 @@ namespace Contact_Tracing
         {
             InitializeComponent();
         }
-
-        public StreamWriter sw = new StreamWriter(Application.StartupPath + "\\POIs\\" + "NewTextFile.txt", append: true);
+        // creates streamwriter and declares variables
+        public StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt", append: true);
         public string? FullName, Gender, Age, Email, Contact, Address;
         public string? CContact1, CContact2, CContact3, CContact4, CContact5;
 
@@ -67,6 +67,7 @@ namespace Contact_Tracing
             {
                 MessageBox.Show("Form was submitted.", "Message");
             }
+            // writes to text file
             sw.WriteLine(FullName);
             sw.WriteLine(Gender);
             sw.WriteLine(Age);
@@ -78,8 +79,10 @@ namespace Contact_Tracing
             sw.WriteLine(CContact3);
             sw.WriteLine(CContact4);
             sw.WriteLine(CContact5);
+            sw.WriteLine("");
             sw.Flush();
 
+            // resets variables and controls
             FullName = null;
             Gender = null;
             Age = null;
@@ -212,6 +215,11 @@ namespace Contact_Tracing
         private void txt_CTLocation5_TextChanged(object sender, EventArgs e)
         {
             CContact5 = txt_CTName5.Text + ", " + date_CTTime5.Value + ", " + txt_CTLocation5.Text;
+        }
+
+        private void txt_Info_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void txt_HouseNumber_TextChanged(object sender, EventArgs e)

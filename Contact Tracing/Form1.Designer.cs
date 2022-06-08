@@ -82,7 +82,7 @@
             this.bttn_Submit = new System.Windows.Forms.Button();
             this.bttn_Previous2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_Info = new System.Windows.Forms.TextBox();
+            this.lbl_Info = new System.Windows.Forms.Label();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.bttn_Answer = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -121,7 +121,7 @@
             this.panel2.Controls.Add(this.txt_FirstName);
             this.panel2.Controls.Add(this.lbl_Name);
             this.panel2.Controls.Add(this.lbl_PersonalDetails);
-            this.panel2.Location = new System.Drawing.Point(300, 0);
+            this.panel2.Location = new System.Drawing.Point(280, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(750, 680);
             this.panel2.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.bttn_Previous1.Size = new System.Drawing.Size(112, 34);
             this.bttn_Previous1.TabIndex = 1;
             this.bttn_Previous1.Text = "Previous";
-            this.bttn_Previous1.UseVisualStyleBackColor = false;
+            this.bttn_Previous1.UseVisualStyleBackColor = true;
             this.bttn_Previous1.Click += new System.EventHandler(this.bttn_Previous1_Click);
             // 
             // bttn_Next
@@ -384,9 +384,10 @@
             // lbl_PersonalDetails
             // 
             this.lbl_PersonalDetails.AutoSize = true;
+            this.lbl_PersonalDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_PersonalDetails.Location = new System.Drawing.Point(10, 10);
             this.lbl_PersonalDetails.Name = "lbl_PersonalDetails";
-            this.lbl_PersonalDetails.Size = new System.Drawing.Size(136, 25);
+            this.lbl_PersonalDetails.Size = new System.Drawing.Size(147, 25);
             this.lbl_PersonalDetails.TabIndex = 0;
             this.lbl_PersonalDetails.Text = "Personal Details";
             // 
@@ -413,7 +414,7 @@
             this.panel3.Controls.Add(this.lbl_ContactTracing);
             this.panel3.Controls.Add(this.bttn_Submit);
             this.panel3.Controls.Add(this.bttn_Previous2);
-            this.panel3.Location = new System.Drawing.Point(300, 0);
+            this.panel3.Location = new System.Drawing.Point(280, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(740, 660);
             this.panel3.TabIndex = 2;
@@ -422,7 +423,7 @@
             // 
             // txt_CTLocation5
             // 
-            this.txt_CTLocation5.Location = new System.Drawing.Point(490, 370);
+            this.txt_CTLocation5.Location = new System.Drawing.Point(520, 380);
             this.txt_CTLocation5.Name = "txt_CTLocation5";
             this.txt_CTLocation5.Size = new System.Drawing.Size(150, 31);
             this.txt_CTLocation5.TabIndex = 21;
@@ -430,7 +431,7 @@
             // 
             // date_CTTime5
             // 
-            this.date_CTTime5.Location = new System.Drawing.Point(180, 370);
+            this.date_CTTime5.Location = new System.Drawing.Point(210, 380);
             this.date_CTTime5.Name = "date_CTTime5";
             this.date_CTTime5.Size = new System.Drawing.Size(300, 31);
             this.date_CTTime5.TabIndex = 20;
@@ -438,7 +439,7 @@
             // 
             // txt_CTName5
             // 
-            this.txt_CTName5.Location = new System.Drawing.Point(10, 370);
+            this.txt_CTName5.Location = new System.Drawing.Point(40, 380);
             this.txt_CTName5.Name = "txt_CTName5";
             this.txt_CTName5.Size = new System.Drawing.Size(150, 31);
             this.txt_CTName5.TabIndex = 19;
@@ -446,7 +447,7 @@
             // 
             // txt_CTLocation4
             // 
-            this.txt_CTLocation4.Location = new System.Drawing.Point(490, 330);
+            this.txt_CTLocation4.Location = new System.Drawing.Point(520, 340);
             this.txt_CTLocation4.Name = "txt_CTLocation4";
             this.txt_CTLocation4.Size = new System.Drawing.Size(150, 31);
             this.txt_CTLocation4.TabIndex = 18;
@@ -454,7 +455,7 @@
             // 
             // date_CTTime4
             // 
-            this.date_CTTime4.Location = new System.Drawing.Point(180, 330);
+            this.date_CTTime4.Location = new System.Drawing.Point(210, 340);
             this.date_CTTime4.Name = "date_CTTime4";
             this.date_CTTime4.Size = new System.Drawing.Size(300, 31);
             this.date_CTTime4.TabIndex = 17;
@@ -462,7 +463,7 @@
             // 
             // txt_CTName4
             // 
-            this.txt_CTName4.Location = new System.Drawing.Point(10, 330);
+            this.txt_CTName4.Location = new System.Drawing.Point(40, 340);
             this.txt_CTName4.Name = "txt_CTName4";
             this.txt_CTName4.Size = new System.Drawing.Size(150, 31);
             this.txt_CTName4.TabIndex = 16;
@@ -470,7 +471,7 @@
             // 
             // txt_CTLocation3
             // 
-            this.txt_CTLocation3.Location = new System.Drawing.Point(490, 290);
+            this.txt_CTLocation3.Location = new System.Drawing.Point(520, 300);
             this.txt_CTLocation3.Name = "txt_CTLocation3";
             this.txt_CTLocation3.Size = new System.Drawing.Size(150, 31);
             this.txt_CTLocation3.TabIndex = 15;
@@ -478,7 +479,7 @@
             // 
             // date_CTTime3
             // 
-            this.date_CTTime3.Location = new System.Drawing.Point(180, 290);
+            this.date_CTTime3.Location = new System.Drawing.Point(210, 300);
             this.date_CTTime3.Name = "date_CTTime3";
             this.date_CTTime3.Size = new System.Drawing.Size(300, 31);
             this.date_CTTime3.TabIndex = 14;
@@ -486,7 +487,7 @@
             // 
             // txt_CTName3
             // 
-            this.txt_CTName3.Location = new System.Drawing.Point(10, 290);
+            this.txt_CTName3.Location = new System.Drawing.Point(40, 300);
             this.txt_CTName3.Name = "txt_CTName3";
             this.txt_CTName3.Size = new System.Drawing.Size(150, 31);
             this.txt_CTName3.TabIndex = 13;
@@ -494,7 +495,7 @@
             // 
             // txt_CTLocation2
             // 
-            this.txt_CTLocation2.Location = new System.Drawing.Point(490, 240);
+            this.txt_CTLocation2.Location = new System.Drawing.Point(520, 250);
             this.txt_CTLocation2.Name = "txt_CTLocation2";
             this.txt_CTLocation2.Size = new System.Drawing.Size(150, 31);
             this.txt_CTLocation2.TabIndex = 12;
@@ -502,7 +503,7 @@
             // 
             // date_CTTime2
             // 
-            this.date_CTTime2.Location = new System.Drawing.Point(180, 240);
+            this.date_CTTime2.Location = new System.Drawing.Point(210, 250);
             this.date_CTTime2.Name = "date_CTTime2";
             this.date_CTTime2.Size = new System.Drawing.Size(300, 31);
             this.date_CTTime2.TabIndex = 11;
@@ -510,7 +511,7 @@
             // 
             // txt_CTName2
             // 
-            this.txt_CTName2.Location = new System.Drawing.Point(10, 240);
+            this.txt_CTName2.Location = new System.Drawing.Point(40, 250);
             this.txt_CTName2.Name = "txt_CTName2";
             this.txt_CTName2.Size = new System.Drawing.Size(150, 31);
             this.txt_CTName2.TabIndex = 10;
@@ -518,7 +519,7 @@
             // 
             // txt_CTLocation1
             // 
-            this.txt_CTLocation1.Location = new System.Drawing.Point(490, 200);
+            this.txt_CTLocation1.Location = new System.Drawing.Point(520, 210);
             this.txt_CTLocation1.Name = "txt_CTLocation1";
             this.txt_CTLocation1.Size = new System.Drawing.Size(150, 31);
             this.txt_CTLocation1.TabIndex = 9;
@@ -526,7 +527,7 @@
             // 
             // date_CTTime1
             // 
-            this.date_CTTime1.Location = new System.Drawing.Point(180, 200);
+            this.date_CTTime1.Location = new System.Drawing.Point(210, 210);
             this.date_CTTime1.Name = "date_CTTime1";
             this.date_CTTime1.Size = new System.Drawing.Size(300, 31);
             this.date_CTTime1.TabIndex = 8;
@@ -534,7 +535,7 @@
             // 
             // txt_CTName1
             // 
-            this.txt_CTName1.Location = new System.Drawing.Point(10, 200);
+            this.txt_CTName1.Location = new System.Drawing.Point(40, 210);
             this.txt_CTName1.Name = "txt_CTName1";
             this.txt_CTName1.Size = new System.Drawing.Size(150, 31);
             this.txt_CTName1.TabIndex = 7;
@@ -543,7 +544,7 @@
             // lbl_CTLocation
             // 
             this.lbl_CTLocation.AutoSize = true;
-            this.lbl_CTLocation.Location = new System.Drawing.Point(500, 160);
+            this.lbl_CTLocation.Location = new System.Drawing.Point(530, 170);
             this.lbl_CTLocation.Name = "lbl_CTLocation";
             this.lbl_CTLocation.Size = new System.Drawing.Size(79, 25);
             this.lbl_CTLocation.TabIndex = 6;
@@ -552,7 +553,7 @@
             // lbl_CTTime
             // 
             this.lbl_CTTime.AutoSize = true;
-            this.lbl_CTTime.Location = new System.Drawing.Point(270, 150);
+            this.lbl_CTTime.Location = new System.Drawing.Point(300, 160);
             this.lbl_CTTime.Name = "lbl_CTTime";
             this.lbl_CTTime.Size = new System.Drawing.Size(50, 25);
             this.lbl_CTTime.TabIndex = 5;
@@ -561,7 +562,7 @@
             // lbl_CTName
             // 
             this.lbl_CTName.AutoSize = true;
-            this.lbl_CTName.Location = new System.Drawing.Point(30, 150);
+            this.lbl_CTName.Location = new System.Drawing.Point(60, 160);
             this.lbl_CTName.Name = "lbl_CTName";
             this.lbl_CTName.Size = new System.Drawing.Size(59, 25);
             this.lbl_CTName.TabIndex = 4;
@@ -570,9 +571,10 @@
             // lbl_ContactTracing
             // 
             this.lbl_ContactTracing.AutoSize = true;
-            this.lbl_ContactTracing.Location = new System.Drawing.Point(10, 10);
+            this.lbl_ContactTracing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ContactTracing.Location = new System.Drawing.Point(40, 70);
             this.lbl_ContactTracing.Name = "lbl_ContactTracing";
-            this.lbl_ContactTracing.Size = new System.Drawing.Size(164, 25);
+            this.lbl_ContactTracing.Size = new System.Drawing.Size(180, 25);
             this.lbl_ContactTracing.TabIndex = 2;
             this.lbl_ContactTracing.Text = "Contact Tracing List";
             // 
@@ -590,7 +592,7 @@
             // 
             this.bttn_Previous2.Location = new System.Drawing.Point(10, 610);
             this.bttn_Previous2.Name = "bttn_Previous2";
-            this.bttn_Previous2.Size = new System.Drawing.Size(112, 30);
+            this.bttn_Previous2.Size = new System.Drawing.Size(112, 34);
             this.bttn_Previous2.TabIndex = 0;
             this.bttn_Previous2.Text = "Previous";
             this.bttn_Previous2.UseVisualStyleBackColor = true;
@@ -598,32 +600,31 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txt_Info);
+            this.panel1.Controls.Add(this.lbl_Info);
             this.panel1.Controls.Add(this.lbl_Title);
             this.panel1.Controls.Add(this.bttn_Answer);
-            this.panel1.Location = new System.Drawing.Point(300, 10);
+            this.panel1.Location = new System.Drawing.Point(290, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(710, 650);
             this.panel1.TabIndex = 1;
             // 
-            // txt_Info
+            // lbl_Info
             // 
-            this.txt_Info.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Info.Location = new System.Drawing.Point(60, 120);
-            this.txt_Info.Multiline = true;
-            this.txt_Info.Name = "txt_Info";
-            this.txt_Info.ReadOnly = true;
-            this.txt_Info.Size = new System.Drawing.Size(590, 140);
-            this.txt_Info.TabIndex = 2;
-            this.txt_Info.Text = resources.GetString("txt_Info.Text");
-            this.txt_Info.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lbl_Info.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Info.Location = new System.Drawing.Point(130, 150);
+            this.lbl_Info.Name = "lbl_Info";
+            this.lbl_Info.Size = new System.Drawing.Size(470, 180);
+            this.lbl_Info.TabIndex = 3;
+            this.lbl_Info.Text = resources.GetString("lbl_Info.Text");
+            this.lbl_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Title
             // 
             this.lbl_Title.AutoSize = true;
-            this.lbl_Title.Location = new System.Drawing.Point(60, 60);
+            this.lbl_Title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Title.Location = new System.Drawing.Point(170, 70);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(180, 25);
+            this.lbl_Title.Size = new System.Drawing.Size(380, 48);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Contact Tracing Form";
             // 
@@ -641,11 +642,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1258, 664);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.Text = "Contact Tracing";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -712,7 +716,7 @@
         private Label lbl_CTTime;
         private Label lbl_CTName;
         private Label lbl_ContactTracing;
-        private TextBox txt_Info;
         private Label lbl_Title;
+        private Label lbl_Info;
     }
 }
