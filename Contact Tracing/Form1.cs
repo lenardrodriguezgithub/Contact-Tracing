@@ -66,40 +66,42 @@ namespace Contact_Tracing
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("Form was submitted.", "Message");
+
+                // writes to text file
+                sw.WriteLine(FullName);
+                sw.WriteLine(Gender);
+                sw.WriteLine(Age);
+                sw.WriteLine(Email);
+                sw.WriteLine(Contact);
+                sw.WriteLine(Address);
+                sw.WriteLine(CContact1);
+                sw.WriteLine(CContact2);
+                sw.WriteLine(CContact3);
+                sw.WriteLine(CContact4);
+                sw.WriteLine(CContact5);
+                sw.WriteLine("");
+                sw.Flush();
+
+                // resets variables and controls
+                FullName = null;
+                Gender = null;
+                Age = null;
+                Email = null;
+                Contact = null;
+                Address = null;
+                CContact1 = null;
+                CContact2 = null;
+                CContact3 = null;
+                CContact4 = null;
+                CContact5 = null;
+                this.Controls.Clear();
+                this.InitializeComponent();
+
+                panel1.Show();
+                panel2.Hide();
+                panel3.Hide();
             }
-            // writes to text file
-            sw.WriteLine(FullName);
-            sw.WriteLine(Gender);
-            sw.WriteLine(Age);
-            sw.WriteLine(Email);
-            sw.WriteLine(Contact);
-            sw.WriteLine(Address);
-            sw.WriteLine(CContact1);
-            sw.WriteLine(CContact2);
-            sw.WriteLine(CContact3);
-            sw.WriteLine(CContact4);
-            sw.WriteLine(CContact5);
-            sw.WriteLine("");
-            sw.Flush();
-
-            // resets variables and controls
-            FullName = null;
-            Gender = null;
-            Age = null;
-            Email = null;
-            Contact = null;
-            Address = null;
-            CContact1 = null;
-            CContact2 = null;
-            CContact3 = null;
-            CContact4 = null;
-            CContact5 = null;
-            this.Controls.Clear();
-            this.InitializeComponent();
-
-            panel1.Show();
-            panel2.Hide();
-            panel3.Hide();
+            
         }
 
         private void txt_FirstName_TextChanged(object sender, EventArgs e)
