@@ -121,7 +121,7 @@
             this.panel2.Controls.Add(this.txt_FirstName);
             this.panel2.Controls.Add(this.lbl_Name);
             this.panel2.Controls.Add(this.lbl_PersonalDetails);
-            this.panel2.Location = new System.Drawing.Point(280, 0);
+            this.panel2.Location = new System.Drawing.Point(270, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(750, 680);
             this.panel2.TabIndex = 0;
@@ -423,128 +423,134 @@
             // 
             // txt_CTLocation5
             // 
-            this.txt_CTLocation5.Location = new System.Drawing.Point(520, 380);
+            this.txt_CTLocation5.Location = new System.Drawing.Point(490, 380);
             this.txt_CTLocation5.Name = "txt_CTLocation5";
-            this.txt_CTLocation5.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTLocation5.Size = new System.Drawing.Size(230, 31);
             this.txt_CTLocation5.TabIndex = 21;
             this.txt_CTLocation5.TextChanged += new System.EventHandler(this.txt_CTLocation5_TextChanged);
             // 
             // date_CTTime5
             // 
-            this.date_CTTime5.Location = new System.Drawing.Point(210, 380);
+            this.date_CTTime5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_CTTime5.Location = new System.Drawing.Point(310, 380);
             this.date_CTTime5.Name = "date_CTTime5";
-            this.date_CTTime5.Size = new System.Drawing.Size(300, 31);
+            this.date_CTTime5.Size = new System.Drawing.Size(170, 31);
             this.date_CTTime5.TabIndex = 20;
             this.date_CTTime5.ValueChanged += new System.EventHandler(this.date_CTTime5_ValueChanged);
             // 
             // txt_CTName5
             // 
-            this.txt_CTName5.Location = new System.Drawing.Point(40, 380);
+            this.txt_CTName5.Location = new System.Drawing.Point(20, 380);
             this.txt_CTName5.Name = "txt_CTName5";
-            this.txt_CTName5.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTName5.Size = new System.Drawing.Size(280, 31);
             this.txt_CTName5.TabIndex = 19;
             this.txt_CTName5.TextChanged += new System.EventHandler(this.txt_CTName5_TextChanged);
             // 
             // txt_CTLocation4
             // 
-            this.txt_CTLocation4.Location = new System.Drawing.Point(520, 340);
+            this.txt_CTLocation4.Location = new System.Drawing.Point(490, 340);
             this.txt_CTLocation4.Name = "txt_CTLocation4";
-            this.txt_CTLocation4.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTLocation4.Size = new System.Drawing.Size(230, 31);
             this.txt_CTLocation4.TabIndex = 18;
             this.txt_CTLocation4.TextChanged += new System.EventHandler(this.txt_CTLocation4_TextChanged);
             // 
             // date_CTTime4
             // 
-            this.date_CTTime4.Location = new System.Drawing.Point(210, 340);
+            this.date_CTTime4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_CTTime4.Location = new System.Drawing.Point(310, 340);
             this.date_CTTime4.Name = "date_CTTime4";
-            this.date_CTTime4.Size = new System.Drawing.Size(300, 31);
+            this.date_CTTime4.Size = new System.Drawing.Size(170, 31);
             this.date_CTTime4.TabIndex = 17;
             this.date_CTTime4.ValueChanged += new System.EventHandler(this.date_CTTime4_ValueChanged);
             // 
             // txt_CTName4
             // 
-            this.txt_CTName4.Location = new System.Drawing.Point(40, 340);
+            this.txt_CTName4.Location = new System.Drawing.Point(20, 340);
             this.txt_CTName4.Name = "txt_CTName4";
-            this.txt_CTName4.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTName4.Size = new System.Drawing.Size(280, 31);
             this.txt_CTName4.TabIndex = 16;
             this.txt_CTName4.TextChanged += new System.EventHandler(this.txt_CTName4_TextChanged);
             // 
             // txt_CTLocation3
             // 
-            this.txt_CTLocation3.Location = new System.Drawing.Point(520, 300);
+            this.txt_CTLocation3.Location = new System.Drawing.Point(490, 300);
             this.txt_CTLocation3.Name = "txt_CTLocation3";
-            this.txt_CTLocation3.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTLocation3.Size = new System.Drawing.Size(230, 31);
             this.txt_CTLocation3.TabIndex = 15;
             this.txt_CTLocation3.TextChanged += new System.EventHandler(this.txt_CTLocation3_TextChanged);
             // 
             // date_CTTime3
             // 
-            this.date_CTTime3.Location = new System.Drawing.Point(210, 300);
+            this.date_CTTime3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_CTTime3.Location = new System.Drawing.Point(310, 300);
             this.date_CTTime3.Name = "date_CTTime3";
-            this.date_CTTime3.Size = new System.Drawing.Size(300, 31);
+            this.date_CTTime3.Size = new System.Drawing.Size(170, 31);
             this.date_CTTime3.TabIndex = 14;
             this.date_CTTime3.ValueChanged += new System.EventHandler(this.date_CTTime3_ValueChanged);
             // 
             // txt_CTName3
             // 
-            this.txt_CTName3.Location = new System.Drawing.Point(40, 300);
+            this.txt_CTName3.Location = new System.Drawing.Point(20, 300);
             this.txt_CTName3.Name = "txt_CTName3";
-            this.txt_CTName3.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTName3.Size = new System.Drawing.Size(280, 31);
             this.txt_CTName3.TabIndex = 13;
             this.txt_CTName3.TextChanged += new System.EventHandler(this.txt_CTName3_TextChanged);
             // 
             // txt_CTLocation2
             // 
-            this.txt_CTLocation2.Location = new System.Drawing.Point(520, 250);
+            this.txt_CTLocation2.Location = new System.Drawing.Point(490, 250);
             this.txt_CTLocation2.Name = "txt_CTLocation2";
-            this.txt_CTLocation2.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTLocation2.Size = new System.Drawing.Size(230, 31);
             this.txt_CTLocation2.TabIndex = 12;
             this.txt_CTLocation2.TextChanged += new System.EventHandler(this.txt_CTLocation2_TextChanged);
             // 
             // date_CTTime2
             // 
-            this.date_CTTime2.Location = new System.Drawing.Point(210, 250);
+            this.date_CTTime2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_CTTime2.Location = new System.Drawing.Point(310, 250);
             this.date_CTTime2.Name = "date_CTTime2";
-            this.date_CTTime2.Size = new System.Drawing.Size(300, 31);
+            this.date_CTTime2.Size = new System.Drawing.Size(170, 31);
             this.date_CTTime2.TabIndex = 11;
+            this.date_CTTime2.Value = new System.DateTime(2022, 6, 9, 0, 0, 0, 0);
             this.date_CTTime2.ValueChanged += new System.EventHandler(this.date_CTTime2_ValueChanged);
             // 
             // txt_CTName2
             // 
-            this.txt_CTName2.Location = new System.Drawing.Point(40, 250);
+            this.txt_CTName2.Location = new System.Drawing.Point(20, 250);
             this.txt_CTName2.Name = "txt_CTName2";
-            this.txt_CTName2.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTName2.Size = new System.Drawing.Size(280, 31);
             this.txt_CTName2.TabIndex = 10;
             this.txt_CTName2.TextChanged += new System.EventHandler(this.txt_CTName2_TextChanged);
             // 
             // txt_CTLocation1
             // 
-            this.txt_CTLocation1.Location = new System.Drawing.Point(520, 210);
+            this.txt_CTLocation1.Location = new System.Drawing.Point(490, 210);
             this.txt_CTLocation1.Name = "txt_CTLocation1";
-            this.txt_CTLocation1.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTLocation1.Size = new System.Drawing.Size(230, 31);
             this.txt_CTLocation1.TabIndex = 9;
             this.txt_CTLocation1.TextChanged += new System.EventHandler(this.txt_CTLocation1_TextChanged);
             // 
             // date_CTTime1
             // 
-            this.date_CTTime1.Location = new System.Drawing.Point(210, 210);
+            this.date_CTTime1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_CTTime1.Location = new System.Drawing.Point(310, 210);
             this.date_CTTime1.Name = "date_CTTime1";
-            this.date_CTTime1.Size = new System.Drawing.Size(300, 31);
+            this.date_CTTime1.Size = new System.Drawing.Size(170, 31);
             this.date_CTTime1.TabIndex = 8;
             this.date_CTTime1.ValueChanged += new System.EventHandler(this.date_CTTime1_ValueChanged);
             // 
             // txt_CTName1
             // 
-            this.txt_CTName1.Location = new System.Drawing.Point(40, 210);
+            this.txt_CTName1.Location = new System.Drawing.Point(20, 210);
             this.txt_CTName1.Name = "txt_CTName1";
-            this.txt_CTName1.Size = new System.Drawing.Size(150, 31);
+            this.txt_CTName1.Size = new System.Drawing.Size(280, 31);
             this.txt_CTName1.TabIndex = 7;
             this.txt_CTName1.TextChanged += new System.EventHandler(this.txt_CTName1_TextChanged);
             // 
             // lbl_CTLocation
             // 
             this.lbl_CTLocation.AutoSize = true;
-            this.lbl_CTLocation.Location = new System.Drawing.Point(530, 170);
+            this.lbl_CTLocation.Location = new System.Drawing.Point(490, 170);
             this.lbl_CTLocation.Name = "lbl_CTLocation";
             this.lbl_CTLocation.Size = new System.Drawing.Size(79, 25);
             this.lbl_CTLocation.TabIndex = 6;
@@ -553,7 +559,7 @@
             // lbl_CTTime
             // 
             this.lbl_CTTime.AutoSize = true;
-            this.lbl_CTTime.Location = new System.Drawing.Point(300, 160);
+            this.lbl_CTTime.Location = new System.Drawing.Point(310, 170);
             this.lbl_CTTime.Name = "lbl_CTTime";
             this.lbl_CTTime.Size = new System.Drawing.Size(50, 25);
             this.lbl_CTTime.TabIndex = 5;
@@ -562,7 +568,7 @@
             // lbl_CTName
             // 
             this.lbl_CTName.AutoSize = true;
-            this.lbl_CTName.Location = new System.Drawing.Point(60, 160);
+            this.lbl_CTName.Location = new System.Drawing.Point(20, 170);
             this.lbl_CTName.Name = "lbl_CTName";
             this.lbl_CTName.Size = new System.Drawing.Size(59, 25);
             this.lbl_CTName.TabIndex = 4;
@@ -580,7 +586,7 @@
             // 
             // bttn_Submit
             // 
-            this.bttn_Submit.Location = new System.Drawing.Point(600, 610);
+            this.bttn_Submit.Location = new System.Drawing.Point(610, 610);
             this.bttn_Submit.Name = "bttn_Submit";
             this.bttn_Submit.Size = new System.Drawing.Size(112, 34);
             this.bttn_Submit.TabIndex = 1;

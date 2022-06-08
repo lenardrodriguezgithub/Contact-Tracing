@@ -146,7 +146,7 @@ namespace Contact_Tracing
 
         private void date_CTTime1_ValueChanged(object sender, EventArgs e)
         {
-            CContact1 = txt_CTName1.Text + ", " + date_CTTime1.Value + ", " + txt_CTLocation1.Text;
+            CContact1 = txt_CTName1.Text + ", " + date_CTTime1.Value.ToString("MM dd, yyyy") + ", " + txt_CTLocation1.Text;
         }
 
         private void txt_CTLocation1_TextChanged(object sender, EventArgs e)
@@ -166,7 +166,7 @@ namespace Contact_Tracing
 
         private void date_CTTime2_ValueChanged(object sender, EventArgs e)
         {
-            CContact2 = txt_CTName2.Text + ", " + date_CTTime2.Value + ", " + txt_CTLocation2.Text;
+            CContact2 = txt_CTName2.Text + ", " + date_CTTime2.Value.ToString("MM dd, yyyy") + ", " + txt_CTLocation2.Text;
         }
 
         private void txt_CTLocation2_TextChanged(object sender, EventArgs e)
@@ -181,7 +181,7 @@ namespace Contact_Tracing
 
         private void date_CTTime3_ValueChanged(object sender, EventArgs e)
         {
-            CContact3 = txt_CTName3.Text + ", " + date_CTTime3.Value + ", " + txt_CTLocation3.Text;
+            CContact3 = txt_CTName3.Text + ", " + date_CTTime3.Value.ToString("MM dd, yyyy") + ", " + txt_CTLocation3.Text;
         }
 
         private void txt_CTLocation3_TextChanged(object sender, EventArgs e)
@@ -196,7 +196,7 @@ namespace Contact_Tracing
 
         private void date_CTTime4_ValueChanged(object sender, EventArgs e)
         {
-            CContact4 = txt_CTName4.Text + ", " + date_CTTime4.Value + ", " + txt_CTLocation4.Text;
+            CContact4 = txt_CTName4.Text + ", " + date_CTTime4.Value.ToString("MM dd, yyyy") + ", " + txt_CTLocation4.Text;
         }
 
         private void txt_CTLocation4_TextChanged(object sender, EventArgs e)
@@ -211,7 +211,7 @@ namespace Contact_Tracing
 
         private void date_CTTime5_ValueChanged(object sender, EventArgs e)
         {
-            CContact5 = txt_CTName5.Text + ", " + date_CTTime5.Value + ", " + txt_CTLocation5.Text;
+            CContact5 = txt_CTName5.Text + ", " + date_CTTime5.Value.ToString("MM dd, yyyy") + ", " + txt_CTLocation5.Text;
         }
 
         private void txt_CTLocation5_TextChanged(object sender, EventArgs e)
