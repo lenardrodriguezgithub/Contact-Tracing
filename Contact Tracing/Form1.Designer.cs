@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.bttn_Previous1 = new System.Windows.Forms.Button();
             this.bttn_Next = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_PersonalDetails = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.txt_CTLocation5 = new System.Windows.Forms.TextBox();
             this.date_CTTime5 = new System.Windows.Forms.DateTimePicker();
             this.txt_CTName5 = new System.Windows.Forms.TextBox();
@@ -78,11 +78,12 @@
             this.lbl_CTLocation = new System.Windows.Forms.Label();
             this.lbl_CTTime = new System.Windows.Forms.Label();
             this.lbl_CTName = new System.Windows.Forms.Label();
-            this.txt_ContactTracing = new System.Windows.Forms.TextBox();
             this.lbl_ContactTracing = new System.Windows.Forms.Label();
             this.bttn_Submit = new System.Windows.Forms.Button();
             this.bttn_Previous2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_Info = new System.Windows.Forms.TextBox();
+            this.lbl_Title = new System.Windows.Forms.Label();
             this.bttn_Answer = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,9 +121,9 @@
             this.panel2.Controls.Add(this.txt_FirstName);
             this.panel2.Controls.Add(this.lbl_Name);
             this.panel2.Controls.Add(this.lbl_PersonalDetails);
-            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Location = new System.Drawing.Point(300, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(740, 680);
+            this.panel2.Size = new System.Drawing.Size(750, 680);
             this.panel2.TabIndex = 0;
             this.panel2.Visible = false;
             // 
@@ -391,7 +392,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.txt_CTLocation5);
             this.panel3.Controls.Add(this.date_CTTime5);
             this.panel3.Controls.Add(this.txt_CTName5);
@@ -410,26 +410,15 @@
             this.panel3.Controls.Add(this.lbl_CTLocation);
             this.panel3.Controls.Add(this.lbl_CTTime);
             this.panel3.Controls.Add(this.lbl_CTName);
-            this.panel3.Controls.Add(this.txt_ContactTracing);
             this.panel3.Controls.Add(this.lbl_ContactTracing);
             this.panel3.Controls.Add(this.bttn_Submit);
             this.panel3.Controls.Add(this.bttn_Previous2);
-            this.panel3.Location = new System.Drawing.Point(430, -140);
+            this.panel3.Location = new System.Drawing.Point(300, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(730, 660);
+            this.panel3.Size = new System.Drawing.Size(740, 660);
             this.panel3.TabIndex = 2;
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(550, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_CTLocation5
             // 
@@ -578,18 +567,10 @@
             this.lbl_CTName.TabIndex = 4;
             this.lbl_CTName.Text = "Name";
             // 
-            // txt_ContactTracing
-            // 
-            this.txt_ContactTracing.Location = new System.Drawing.Point(30, 60);
-            this.txt_ContactTracing.Multiline = true;
-            this.txt_ContactTracing.Name = "txt_ContactTracing";
-            this.txt_ContactTracing.Size = new System.Drawing.Size(400, 90);
-            this.txt_ContactTracing.TabIndex = 3;
-            // 
             // lbl_ContactTracing
             // 
             this.lbl_ContactTracing.AutoSize = true;
-            this.lbl_ContactTracing.Location = new System.Drawing.Point(20, 20);
+            this.lbl_ContactTracing.Location = new System.Drawing.Point(10, 10);
             this.lbl_ContactTracing.Name = "lbl_ContactTracing";
             this.lbl_ContactTracing.Size = new System.Drawing.Size(164, 25);
             this.lbl_ContactTracing.TabIndex = 2;
@@ -617,15 +598,38 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_Info);
+            this.panel1.Controls.Add(this.lbl_Title);
             this.panel1.Controls.Add(this.bttn_Answer);
-            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Location = new System.Drawing.Point(300, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 650);
+            this.panel1.Size = new System.Drawing.Size(710, 650);
             this.panel1.TabIndex = 1;
+            // 
+            // txt_Info
+            // 
+            this.txt_Info.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Info.Location = new System.Drawing.Point(60, 120);
+            this.txt_Info.Multiline = true;
+            this.txt_Info.Name = "txt_Info";
+            this.txt_Info.ReadOnly = true;
+            this.txt_Info.Size = new System.Drawing.Size(590, 140);
+            this.txt_Info.TabIndex = 2;
+            this.txt_Info.Text = resources.GetString("txt_Info.Text");
+            this.txt_Info.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.AutoSize = true;
+            this.lbl_Title.Location = new System.Drawing.Point(60, 60);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(180, 25);
+            this.lbl_Title.TabIndex = 1;
+            this.lbl_Title.Text = "Contact Tracing Form";
             // 
             // bttn_Answer
             // 
-            this.bttn_Answer.Location = new System.Drawing.Point(20, 210);
+            this.bttn_Answer.Location = new System.Drawing.Point(80, 540);
             this.bttn_Answer.Name = "bttn_Answer";
             this.bttn_Answer.Size = new System.Drawing.Size(140, 40);
             this.bttn_Answer.TabIndex = 0;
@@ -638,15 +642,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 664);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -688,7 +693,6 @@
         private Panel panel3;
         private Button bttn_Submit;
         private Button bttn_Previous2;
-        private Button button1;
         private TextBox txt_CTLocation5;
         private DateTimePicker date_CTTime5;
         private TextBox txt_CTName5;
@@ -707,7 +711,8 @@
         private Label lbl_CTLocation;
         private Label lbl_CTTime;
         private Label lbl_CTName;
-        private TextBox txt_ContactTracing;
         private Label lbl_ContactTracing;
+        private TextBox txt_Info;
+        private Label lbl_Title;
     }
 }

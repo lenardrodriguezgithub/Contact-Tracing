@@ -57,4 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txt_Info.Text" xml:space="preserve">
+    <value>If you are either diagnosed with Coronavirus or experiencing Coronavirus symptoms, please provide us with your contact information and address. Please list out people who you have in contact during the last 14 days. If you have been in other public or crowded locations during this period, please specify and also list out people that you have contacted.</value>
+  </data>
 </root>

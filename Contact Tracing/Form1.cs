@@ -12,7 +12,7 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
-        public StreamWriter sw = new StreamWriter(Application.StartupPath + "\\POIs\\" + "TextFile.txt", append: true);
+        public StreamWriter sw = new StreamWriter(Application.StartupPath + "\\POIs\\" + "NewTextFile.txt", append: true);
         public string? FullName, Gender, Age, Email, Contact, Address;
         public string? CContact1, CContact2, CContact3, CContact4, CContact5;
 
@@ -62,14 +62,41 @@ namespace Contact_Tracing
 
         private void bttn_Submit_Click(object sender, EventArgs e)
         {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to submit?", "Message", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    MessageBox.Show("Form was submitted.", "Message");
-                    panel1.Show();
-                    panel2.Hide();
-                    panel3.Hide();
-                }
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to submit?", "Message", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Form was submitted.", "Message");
+            }
+            sw.WriteLine(FullName);
+            sw.WriteLine(Gender);
+            sw.WriteLine(Age);
+            sw.WriteLine(Email);
+            sw.WriteLine(Contact);
+            sw.WriteLine(Address);
+            sw.WriteLine(CContact1);
+            sw.WriteLine(CContact2);
+            sw.WriteLine(CContact3);
+            sw.WriteLine(CContact4);
+            sw.WriteLine(CContact5);
+            sw.Flush();
+
+            FullName = null;
+            Gender = null;
+            Age = null;
+            Email = null;
+            Contact = null;
+            Address = null;
+            CContact1 = null;
+            CContact2 = null;
+            CContact3 = null;
+            CContact4 = null;
+            CContact5 = null;
+            this.Controls.Clear();
+            this.InitializeComponent();
+
+            panel1.Show();
+            panel2.Hide();
+            panel3.Hide();
         }
 
         private void txt_FirstName_TextChanged(object sender, EventArgs e)
@@ -120,11 +147,6 @@ namespace Contact_Tracing
         private void txt_CTLocation1_TextChanged(object sender, EventArgs e)
         {
             CContact1 = txt_CTName1.Text + ", " + date_CTTime1.Value + ", " + txt_CTLocation1.Text;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txt_ContactTracing.Text = CContact1;
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
