@@ -12,9 +12,6 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
-        StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt", append: true);
-
-
         private void bttnSave_Click(object sender, EventArgs e)
         {
             if (txtfName.Text == string.Empty || txtlName.Text == string.Empty ||
@@ -23,6 +20,7 @@ namespace Contact_Tracing
                 txtaTown.Text == string.Empty || txtaMunicipal.Text == string.Empty)
             {
                 MessageBox.Show("Please answer all the required fields.", "Message");
+                MessageBox.Show(Application.StartupPath);
             }
             else
             {
