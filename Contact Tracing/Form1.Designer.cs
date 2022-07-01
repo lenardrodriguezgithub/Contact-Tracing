@@ -35,8 +35,8 @@
             this.bttnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlSurvey = new System.Windows.Forms.Panel();
-            this.lbType = new System.Windows.Forms.ListBox();
             this.lbGender = new System.Windows.Forms.ListBox();
+            this.lbType = new System.Windows.Forms.ListBox();
             this.bttnSave = new System.Windows.Forms.Button();
             this.bttnQR = new System.Windows.Forms.Button();
             this.bttnBackSurvey = new System.Windows.Forms.Button();
@@ -53,13 +53,11 @@
             this.txtaTown = new System.Windows.Forms.TextBox();
             this.txtaSt = new System.Windows.Forms.TextBox();
             this.txtaNo = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtlName = new System.Windows.Forms.TextBox();
             this.txtfName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -131,8 +129,8 @@
             // pnlSurvey
             // 
             this.pnlSurvey.AllowDrop = true;
-            this.pnlSurvey.Controls.Add(this.lbType);
             this.pnlSurvey.Controls.Add(this.lbGender);
+            this.pnlSurvey.Controls.Add(this.lbType);
             this.pnlSurvey.Controls.Add(this.bttnSave);
             this.pnlSurvey.Controls.Add(this.bttnQR);
             this.pnlSurvey.Controls.Add(this.bttnBackSurvey);
@@ -149,13 +147,11 @@
             this.pnlSurvey.Controls.Add(this.txtaTown);
             this.pnlSurvey.Controls.Add(this.txtaSt);
             this.pnlSurvey.Controls.Add(this.txtaNo);
-            this.pnlSurvey.Controls.Add(this.txtEmail);
             this.pnlSurvey.Controls.Add(this.txtContactNo);
             this.pnlSurvey.Controls.Add(this.txtAge);
             this.pnlSurvey.Controls.Add(this.label9);
             this.pnlSurvey.Controls.Add(this.txtlName);
             this.pnlSurvey.Controls.Add(this.txtfName);
-            this.pnlSurvey.Controls.Add(this.label8);
             this.pnlSurvey.Controls.Add(this.label7);
             this.pnlSurvey.Controls.Add(this.label6);
             this.pnlSurvey.Controls.Add(this.label4);
@@ -166,35 +162,38 @@
             this.pnlSurvey.Size = new System.Drawing.Size(1200, 600);
             this.pnlSurvey.TabIndex = 0;
             // 
-            // lbType
-            // 
-            this.lbType.FormattingEnabled = true;
-            this.lbType.ItemHeight = 25;
-            this.lbType.Items.AddRange(new object[] {
-            "Positive",
-            "Recovered",
-            "Under Monitoring",
-            "Close Contact"});
-            this.lbType.Location = new System.Drawing.Point(240, 500);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(180, 29);
-            this.lbType.TabIndex = 34;
-            // 
             // lbGender
             // 
             this.lbGender.FormattingEnabled = true;
             this.lbGender.ItemHeight = 25;
             this.lbGender.Items.AddRange(new object[] {
+            "",
             "Male",
             "Female",
             "Bisexual",
-            "Transgender",
             "Queer",
-            "Other"});
+            "Transgender",
+            "Other",
+            "Cat"});
             this.lbGender.Location = new System.Drawing.Point(240, 270);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(180, 29);
-            this.lbGender.TabIndex = 33;
+            this.lbGender.TabIndex = 35;
+            // 
+            // lbType
+            // 
+            this.lbType.FormattingEnabled = true;
+            this.lbType.ItemHeight = 25;
+            this.lbType.Items.AddRange(new object[] {
+            "",
+            "Positive",
+            "Recovered",
+            "Under Monitoring",
+            "Close Contact"});
+            this.lbType.Location = new System.Drawing.Point(240, 450);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(180, 29);
+            this.lbType.TabIndex = 34;
             // 
             // bttnSave
             // 
@@ -246,7 +245,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 500);
+            this.label5.Location = new System.Drawing.Point(70, 450);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 25);
             this.label5.TabIndex = 26;
@@ -255,7 +254,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(720, 460);
+            this.label15.Location = new System.Drawing.Point(720, 410);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(107, 25);
             this.label15.TabIndex = 24;
@@ -264,7 +263,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(560, 460);
+            this.label14.Location = new System.Drawing.Point(560, 410);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 25);
             this.label14.TabIndex = 23;
@@ -273,7 +272,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(410, 460);
+            this.label13.Location = new System.Drawing.Point(410, 410);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 25);
             this.label13.TabIndex = 22;
@@ -282,7 +281,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(250, 460);
+            this.label12.Location = new System.Drawing.Point(250, 410);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 25);
             this.label12.TabIndex = 21;
@@ -308,38 +307,31 @@
             // 
             // txtaMunicipal
             // 
-            this.txtaMunicipal.Location = new System.Drawing.Point(720, 420);
+            this.txtaMunicipal.Location = new System.Drawing.Point(720, 370);
             this.txtaMunicipal.Name = "txtaMunicipal";
             this.txtaMunicipal.Size = new System.Drawing.Size(150, 31);
             this.txtaMunicipal.TabIndex = 18;
             // 
             // txtaTown
             // 
-            this.txtaTown.Location = new System.Drawing.Point(560, 420);
+            this.txtaTown.Location = new System.Drawing.Point(560, 370);
             this.txtaTown.Name = "txtaTown";
             this.txtaTown.Size = new System.Drawing.Size(150, 31);
             this.txtaTown.TabIndex = 17;
             // 
             // txtaSt
             // 
-            this.txtaSt.Location = new System.Drawing.Point(400, 420);
+            this.txtaSt.Location = new System.Drawing.Point(400, 370);
             this.txtaSt.Name = "txtaSt";
             this.txtaSt.Size = new System.Drawing.Size(150, 31);
             this.txtaSt.TabIndex = 16;
             // 
             // txtaNo
             // 
-            this.txtaNo.Location = new System.Drawing.Point(240, 420);
+            this.txtaNo.Location = new System.Drawing.Point(240, 370);
             this.txtaNo.Name = "txtaNo";
             this.txtaNo.Size = new System.Drawing.Size(150, 31);
             this.txtaNo.TabIndex = 15;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(240, 370);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(210, 31);
-            this.txtEmail.TabIndex = 14;
             // 
             // txtContactNo
             // 
@@ -358,7 +350,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(70, 430);
+            this.label9.Location = new System.Drawing.Point(70, 380);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 25);
             this.label9.TabIndex = 9;
@@ -377,15 +369,6 @@
             this.txtfName.Name = "txtfName";
             this.txtfName.Size = new System.Drawing.Size(210, 31);
             this.txtfName.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(70, 380);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 25);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Email";
             // 
             // label7
             // 
@@ -558,7 +541,6 @@
         private Label label9;
         private TextBox txtlName;
         private TextBox txtfName;
-        private Label label8;
         private Label label7;
         private Label label6;
         private Label label4;
@@ -575,7 +557,6 @@
         private TextBox txtaTown;
         private TextBox txtaSt;
         private TextBox txtaNo;
-        private TextBox txtEmail;
         private TextBox txtContactNo;
         private Label label5;
         private Label label16;
@@ -583,8 +564,6 @@
         private Button bttnSave;
         private Button bttnQR;
         private Button bttnBackSurvey;
-        private ListBox lbType;
-        private ListBox lbGender;
         private Panel pnlList;
         private DataGridView dgvList;
         private DataGridViewTextBoxColumn clmnName;
@@ -595,5 +574,7 @@
         private DataGridViewTextBoxColumn clmnEmail;
         private DataGridViewTextBoxColumn clmnAddress;
         private DataGridViewTextBoxColumn clmnType;
+        private ListBox lbType;
+        private ListBox lbGender;
     }
 }

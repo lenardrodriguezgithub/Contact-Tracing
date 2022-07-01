@@ -27,11 +27,10 @@ namespace Contact_Tracing
                 mycontact.Name = txtfName.Text + " " + txtlName.Text;
                 mycontact.Age = txtAge.Text;
                 mycontact.Birth = dtpBirth.Text;
-                mycontact.Gender = lbGender.Text;
+                mycontact.Gender = lbGender.GetItemText(lbGender.SelectedItem);
                 mycontact.ContactNo = txtContactNo.Text;
-                mycontact.Email = txtEmail.Text;
                 mycontact.Address = txtaNo.Text + ", " + txtaSt.Text + ", " + txtaTown.Text + ", " + txtaMunicipal.Text;
-                mycontact.Type = lbType.Text;
+                mycontact.Type = lbType.GetItemText(lbType.SelectedItem);
                 mycontact.WriteToFile();
                 pnlSurvey.Visible = false;
             }       
@@ -45,14 +44,15 @@ namespace Contact_Tracing
         public string? Birth { get; set; }
         public string? Gender { get; set; }
         public string? ContactNo { get; set; }
-        public string? Email { get; set; }
         public string? Address { get; set; }
         public string? Type { get; set; }
 
         public void WriteToFile()
         {
-            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt", append: true);
-            sw.WriteLine(Name+" / "+Age+" / "+Birth+" / "+Gender+" / "+ContactNo+" / "+Email+" / "+Address+" / "+Type);
+            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + 
+                                                "ContactTracing.txt", append: true);
+            sw.WriteLine(Name+" / "+Age+" / "+Birth+" / "+Gender+" / "+
+                         ContactNo+" / "+Address+" / "+Type);
             sw.Flush();
             sw.Close();
         }
@@ -64,7 +64,6 @@ namespace Contact_Tracing
                             Birth + Environment.NewLine +
                             Gender + Environment.NewLine +
                             ContactNo + Environment.NewLine +
-                            Email + Environment.NewLine +
                             Address + Environment.NewLine +
                             Type);
         }
