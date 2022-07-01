@@ -35,6 +35,8 @@
             this.bttnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlSurvey = new System.Windows.Forms.Panel();
+            this.lbType = new System.Windows.Forms.ListBox();
+            this.lbGender = new System.Windows.Forms.ListBox();
             this.bttnSave = new System.Windows.Forms.Button();
             this.bttnQR = new System.Windows.Forms.Button();
             this.bttnBackSurvey = new System.Windows.Forms.Button();
@@ -65,10 +67,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlQR = new System.Windows.Forms.Panel();
             this.pnlList = new System.Windows.Forms.Panel();
-            this.lbGender = new System.Windows.Forms.ListBox();
-            this.lbType = new System.Windows.Forms.ListBox();
+            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.clmnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnGener = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnContactNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
+            this.pnlList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -150,10 +161,40 @@
             this.pnlSurvey.Controls.Add(this.label4);
             this.pnlSurvey.Controls.Add(this.label3);
             this.pnlSurvey.Controls.Add(this.label2);
-            this.pnlSurvey.Location = new System.Drawing.Point(30, 30);
+            this.pnlSurvey.Location = new System.Drawing.Point(20, 20);
             this.pnlSurvey.Name = "pnlSurvey";
             this.pnlSurvey.Size = new System.Drawing.Size(1200, 600);
             this.pnlSurvey.TabIndex = 0;
+            // 
+            // lbType
+            // 
+            this.lbType.FormattingEnabled = true;
+            this.lbType.ItemHeight = 25;
+            this.lbType.Items.AddRange(new object[] {
+            "Positive",
+            "Recovered",
+            "Under Monitoring",
+            "Close Contact"});
+            this.lbType.Location = new System.Drawing.Point(240, 500);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(180, 29);
+            this.lbType.TabIndex = 34;
+            // 
+            // lbGender
+            // 
+            this.lbGender.FormattingEnabled = true;
+            this.lbGender.ItemHeight = 25;
+            this.lbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Bisexual",
+            "Transgender",
+            "Queer",
+            "Other"});
+            this.lbGender.Location = new System.Drawing.Point(240, 270);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(180, 29);
+            this.lbGender.TabIndex = 33;
             // 
             // bttnSave
             // 
@@ -186,11 +227,11 @@
             // dtpBirth
             // 
             this.dtpBirth.AllowDrop = true;
-            this.dtpBirth.CustomFormat = "MM / dd / yyyy";
+            this.dtpBirth.CustomFormat = "MM, dd, yyyy";
             this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBirth.Location = new System.Drawing.Point(240, 220);
             this.dtpBirth.Name = "dtpBirth";
-            this.dtpBirth.Size = new System.Drawing.Size(210, 31);
+            this.dtpBirth.Size = new System.Drawing.Size(250, 31);
             this.dtpBirth.TabIndex = 29;
             // 
             // label16
@@ -400,40 +441,87 @@
             // 
             // pnlList
             // 
-            this.pnlList.Location = new System.Drawing.Point(0, 0);
+            this.pnlList.Controls.Add(this.dgvList);
+            this.pnlList.Location = new System.Drawing.Point(20, 20);
             this.pnlList.Name = "pnlList";
             this.pnlList.Size = new System.Drawing.Size(1200, 600);
-            this.pnlList.TabIndex = 0;
+            this.pnlList.TabIndex = 35;
             // 
-            // lbGender
+            // dgvList
             // 
-            this.lbGender.FormattingEnabled = true;
-            this.lbGender.ItemHeight = 25;
-            this.lbGender.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Bisexual",
-            "Transgender",
-            "Queer",
-            "Other"});
-            this.lbGender.Location = new System.Drawing.Point(240, 270);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(180, 29);
-            this.lbGender.TabIndex = 33;
+            this.dgvList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnName,
+            this.clmnAge,
+            this.clmnBirth,
+            this.clmnGener,
+            this.clmnContactNo,
+            this.clmnEmail,
+            this.clmnAddress,
+            this.clmnType});
+            this.dgvList.Location = new System.Drawing.Point(10, 10);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvList.RowTemplate.Height = 33;
+            this.dgvList.Size = new System.Drawing.Size(1180, 300);
+            this.dgvList.TabIndex = 0;
             // 
-            // lbType
+            // clmnName
             // 
-            this.lbType.FormattingEnabled = true;
-            this.lbType.ItemHeight = 25;
-            this.lbType.Items.AddRange(new object[] {
-            "Positive",
-            "Recovered",
-            "Under Monitoring",
-            "Close Contact"});
-            this.lbType.Location = new System.Drawing.Point(240, 500);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(180, 29);
-            this.lbType.TabIndex = 34;
+            this.clmnName.HeaderText = "Name";
+            this.clmnName.MinimumWidth = 8;
+            this.clmnName.Name = "clmnName";
+            this.clmnName.Width = 150;
+            // 
+            // clmnAge
+            // 
+            this.clmnAge.HeaderText = "Age";
+            this.clmnAge.MinimumWidth = 8;
+            this.clmnAge.Name = "clmnAge";
+            this.clmnAge.Width = 150;
+            // 
+            // clmnBirth
+            // 
+            this.clmnBirth.HeaderText = "Birthday";
+            this.clmnBirth.MinimumWidth = 8;
+            this.clmnBirth.Name = "clmnBirth";
+            this.clmnBirth.Width = 150;
+            // 
+            // clmnGener
+            // 
+            this.clmnGener.HeaderText = "Gender";
+            this.clmnGener.MinimumWidth = 8;
+            this.clmnGener.Name = "clmnGener";
+            this.clmnGener.Width = 150;
+            // 
+            // clmnContactNo
+            // 
+            this.clmnContactNo.HeaderText = "Contact No.";
+            this.clmnContactNo.MinimumWidth = 8;
+            this.clmnContactNo.Name = "clmnContactNo";
+            this.clmnContactNo.Width = 150;
+            // 
+            // clmnEmail
+            // 
+            this.clmnEmail.HeaderText = "Email";
+            this.clmnEmail.MinimumWidth = 8;
+            this.clmnEmail.Name = "clmnEmail";
+            this.clmnEmail.Width = 150;
+            // 
+            // clmnAddress
+            // 
+            this.clmnAddress.HeaderText = "Address";
+            this.clmnAddress.MinimumWidth = 8;
+            this.clmnAddress.Name = "clmnAddress";
+            this.clmnAddress.Width = 150;
+            // 
+            // clmnType
+            // 
+            this.clmnType.HeaderText = "Type";
+            this.clmnType.MinimumWidth = 8;
+            this.clmnType.Name = "clmnType";
+            this.clmnType.Width = 150;
             // 
             // Form1
             // 
@@ -442,8 +530,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1258, 664);
             this.Controls.Add(this.pnlSurvey);
-            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlList);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlQR);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -452,6 +540,8 @@
             this.pnlMenu.PerformLayout();
             this.pnlSurvey.ResumeLayout(false);
             this.pnlSurvey.PerformLayout();
+            this.pnlList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,7 +565,6 @@
         private Label label3;
         private Label label2;
         private Panel pnlQR;
-        private Panel pnlList;
         private Label label15;
         private Label label14;
         private Label label13;
@@ -496,5 +585,15 @@
         private Button bttnBackSurvey;
         private ListBox lbType;
         private ListBox lbGender;
+        private Panel pnlList;
+        private DataGridView dgvList;
+        private DataGridViewTextBoxColumn clmnName;
+        private DataGridViewTextBoxColumn clmnAge;
+        private DataGridViewTextBoxColumn clmnBirth;
+        private DataGridViewTextBoxColumn clmnGener;
+        private DataGridViewTextBoxColumn clmnContactNo;
+        private DataGridViewTextBoxColumn clmnEmail;
+        private DataGridViewTextBoxColumn clmnAddress;
+        private DataGridViewTextBoxColumn clmnType;
     }
 }

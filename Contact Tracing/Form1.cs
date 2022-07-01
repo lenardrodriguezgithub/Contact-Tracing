@@ -20,7 +20,6 @@ namespace Contact_Tracing
                 txtaTown.Text == string.Empty || txtaMunicipal.Text == string.Empty)
             {
                 MessageBox.Show("Please answer all the required fields.", "Message");
-                MessageBox.Show(Application.StartupPath);
             }
             else
             {
@@ -34,7 +33,7 @@ namespace Contact_Tracing
                 mycontact.Address = txtaNo.Text + ", " + txtaSt.Text + ", " + txtaTown.Text + ", " + txtaMunicipal.Text;
                 mycontact.Type = lbType.Text;
                 mycontact.WriteToFile();
-                mycontact.ShowDetails();
+                pnlSurvey.Visible = false;
             }       
         }
     }
@@ -52,10 +51,10 @@ namespace Contact_Tracing
 
         public void WriteToFile()
         {
-            StreamWriter sw = new StreamWriter("/Users/Lenard/source/repos/contact tracing v2/Contact Records.txt", append: true);
-            sw.WriteLine(Name, Age, Birth, Gender, ContactNo, Email, Address, Type);
+            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt", append: true);
+            sw.WriteLine(Name+" / "+Age+" / "+Birth+" / "+Gender+" / "+ContactNo+" / "+Email+" / "+Address+" / "+Type);
             sw.Flush();
-            MessageBox.Show(Application.StartupPath);
+            sw.Close();
         }
 
         public void ShowDetails()
@@ -67,7 +66,7 @@ namespace Contact_Tracing
                             ContactNo + Environment.NewLine +
                             Email + Environment.NewLine +
                             Address + Environment.NewLine +
-                            Type + Environment.NewLine);
+                            Type);
         }
 
         
