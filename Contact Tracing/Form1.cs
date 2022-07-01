@@ -35,8 +35,7 @@ namespace Contact_Tracing
                 mycontact.Email = txtEmail.Text;
                 mycontact.Address = txtaNo.Text + ", " + txtaSt.Text + ", " + txtaTown.Text + ", " + txtaMunicipal.Text;
                 mycontact.Type = lbType.Text;
-
-
+                mycontact.WriteToFile();
                 mycontact.ShowDetails();
             }       
         }
@@ -53,11 +52,12 @@ namespace Contact_Tracing
         public string? Address { get; set; }
         public string? Type { get; set; }
 
-        public void WriteToText()
+        public void WriteToFile()
         {
-            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt", append: true);
+            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracingV2.txt", append: true);
             sw.WriteLine(Name, Age, Birth, Gender, ContactNo, Email, Address, Type);
-            sw.Close();
+            sw.Flush();
+            MessageBox.Show(Application.StartupPath);
         }
 
         public void ShowDetails()
