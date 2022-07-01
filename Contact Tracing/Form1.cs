@@ -52,7 +52,7 @@ namespace Contact_Tracing
 
         public void WriteToFile()
         {
-            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + "ContactTracingV2.txt", append: true);
+            StreamWriter sw = new StreamWriter("/Users/Lenard/source/repos/contact tracing v2/Contact Records.txt", append: true);
             sw.WriteLine(Name, Age, Birth, Gender, ContactNo, Email, Address, Type);
             sw.Flush();
             MessageBox.Show(Application.StartupPath);
