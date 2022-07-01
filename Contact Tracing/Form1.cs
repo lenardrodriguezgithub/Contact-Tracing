@@ -14,19 +14,30 @@ namespace Contact_Tracing
 
         private void bttnSave_Click(object sender, EventArgs e)
         {
-            // if else field
+            if (txtfName.Text == string.Empty || txtlName.Text == string.Empty ||
+                txtAge.Text == string.Empty || txtContactNo.Text == string.Empty ||
+                txtaNo.Text == string.Empty || txtaSt.Text == string.Empty ||
+                txtaTown.Text == string.Empty || txtaMunicipal.Text == string.Empty)
+            {
+                MessageBox.Show("Please answer all the required fields.", "Message");
+            }
+            else
+            {
+                string Name = txtfName.Text + " " + txtlName.Text;
+                string Age = txtAge.Text;
+                string Birth = dtpBirth.Text;
+                string Gender = lbGender.Text;
+                string ContactNo = txtContactNo.Text;
+                string Email = txtEmail.Text;
+                string Address = txtaNo.Text + ", " + txtaSt.Text + ", " + txtaTown.Text + ", " + txtaMunicipal.Text;
+                string Type = lbType.Text;
 
-            string Name = txtfName.Text + " " + txtlName.Text;
-            string Age = txtAge.Text;
-            string Birth = dtpBirth.Text;
-            string Gender = lbGender.Text;
-            string ContactNo = txtContactNo.Text;
-            string Email = txtEmail.Text;
-            string Address = txtaNo.Text + ", " + txtaSt.Text + ", " + txtaTown.Text + ", " + txtaMunicipal.Text;
-            string Type = lbType.Text;
+                Contact mycontact = new(Name, Age, Birth, Gender, ContactNo, Email, Address, Type);
+                mycontact.ShowDetails();
 
-            Contact mycontact = new(Name, Age, Birth, Gender, ContactNo, Email, Address, Type);
-            mycontact.ShowDetails();
+                StreamWriter sw = new StreamWriter();
+
+            }       
         }
     }
 
