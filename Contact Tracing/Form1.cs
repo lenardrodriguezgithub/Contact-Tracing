@@ -36,61 +36,19 @@ namespace Contact_Tracing
             table.Columns.Add("Date", typeof(string));
             dgvContactList.DataSource = table;
 
-            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo filterInfo in filterInfoCollection)
-                cbDevice.Items.Add(filterInfo.Name);
-            cbDevice.SelectedIndex = 0;
+
         }
 
         private void bttnScan_Click(object sender, EventArgs e)
         {
-            try
-            {
-                captureDevice = new VideoCaptureDevice(filterInfoCollection[cbDevice.SelectedIndex].MonikerString);
-                captureDevice.NewFrame += CaptureDevice_NewFrame;
-                captureDevice.Start();
-                timerQR.Start();
-            }
-            catch
-            {
-                MessageBox.Show("There was an error!", "Error Message");
-            }
+
         }
 
-        private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs e)
-        {
-            pbQR.Image = (Bitmap)e.Frame.Clone();
-        }
 
-        private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            pbQR.Image = (Bitmap)eventArgs.Frame.Clone();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if(captureDevice.IsRunning == true)
-            {
-                captureDevice.Stop();
-            }
-        }
 
         private void timerQR_Tick(object sender, EventArgs e)
         {
-            if(pbQR.Image != null)
-            {
-                BarcodeReader reader;
-                Result result = reader.Decode((Bitmap)pbQR.Image);
-                if(result != null)
-                {
-                    txtQRResult.Text = result.ToString();
-                    timerQR.Stop();
-                    if (captureDevice.IsRunning == true)
-                    {
-                        captureDevice.Stop();
-                    }
-                }
-            }
+
         }
 
         public string? Name;
