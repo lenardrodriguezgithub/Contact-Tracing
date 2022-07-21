@@ -12,6 +12,31 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
+        public int? ID = 0;
+        public string? Name;
+        public string? Age;
+        public string? Gender;
+        public string? ContactNo;
+        public string? Address;
+        public string? Type;
+        public string? Date;
+
+        public void WriteToFile()
+        {
+            ID += ID;
+            StreamWriter sw = new StreamWriter(Application.StartupPath +
+                "\\Contact\\" + "ContactTracing.txt", append: true);
+            sw.WriteLine(Name + "|" + Age + "|" + Gender + "|" +
+                         ContactNo + "|" + Address + "|" + Type + "|" + Date);
+            sw.Flush();
+            sw.Close();
+        }
+
+        public void Confirm()
+        {
+            MessageBox.Show("Details saved.", "Message");
+        }
+
         private void bttnSave_Click(object sender, EventArgs e)
         {
             if (txtfName.Text == string.Empty || txtlName.Text == string.Empty ||
@@ -23,51 +48,21 @@ namespace Contact_Tracing
             }
             else
             {
-                Contact mycontact = new();
-                mycontact.Name = txtfName.Text + " " + txtlName.Text;
-                mycontact.Age = txtAge.Text;
-                mycontact.Birth = dtpBirth.Text;
-                mycontact.Gender = lbGender.GetItemText(lbGender.SelectedItem);
-                mycontact.ContactNo = txtContactNo.Text;
-                mycontact.Address = txtaNo.Text + ", " + txtaSt.Text + ", " + txtaTown.Text + ", " + txtaMunicipal.Text;
-                mycontact.Type = lbType.GetItemText(lbType.SelectedItem);
-                mycontact.WriteToFile();
-                pnlSurvey.Visible = false;
+                Name = txtfName.Text + " " + txtlName.Text;
+                Age = txtAge.Text;
+                Gender = cbGender.GetItemText(cbGender.SelectedItem);
+                ContactNo = txtContactNo.Text;
+                Address = txtaNo.Text + txtaSt.Text + ", " + 
+                    txtaTown.Text + ", " + txtaMunicipal.Text;
+                Type = cbType.GetItemText(cbType.SelectedItem);
+                DateTime today = DateTime.Today;
+                Date = today.ToString();
+                WriteToFile();
             }       
         }
     }
 
-    public class Contact
-    {
-        public string? Name { get; set; }
-        public string? Age { get; set; }
-        public string? Birth { get; set; }
-        public string? Gender { get; set; }
-        public string? ContactNo { get; set; }
-        public string? Address { get; set; }
-        public string? Type { get; set; }
 
-        public void WriteToFile()
-        {
-            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Contact\\" + 
-                                                "ContactTracing.txt", append: true);
-            sw.WriteLine(Name+" / "+Age+" / "+Birth+" / "+Gender+" / "+
-                         ContactNo+" / "+Address+" / "+Type);
-            sw.Flush();
-            sw.Close();
-        }
 
-        public void ShowDetails()
-        {
-            MessageBox.Show(Name + Environment.NewLine +
-                            Age + Environment.NewLine +
-                            Birth + Environment.NewLine +
-                            Gender + Environment.NewLine +
-                            ContactNo + Environment.NewLine +
-                            Address + Environment.NewLine +
-                            Type);
-        }
 
-        
-    }
 }
