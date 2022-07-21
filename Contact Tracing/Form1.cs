@@ -18,7 +18,6 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
-        public int? Id = 0;
         public string? Name;
         public string? Age;
         public string? Gender;
@@ -26,13 +25,10 @@ namespace Contact_Tracing
         public string? Address;
         public string? Type;
         public string? Date;
-
-        //Application.StartupPath +
-        //        "\\Contact\\" + "ContactTracing.txt"
+       
         DataTable table = new DataTable();
-        private void CreateDataGridView_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            table.Columns.Add("Id", typeof(string));
             table.Columns.Add("Name", typeof(string));
             table.Columns.Add("Age", typeof(string));
             table.Columns.Add("Gender", typeof(string));
@@ -40,13 +36,31 @@ namespace Contact_Tracing
             table.Columns.Add("Address", typeof(string));
             table.Columns.Add("Type", typeof(string));
             table.Columns.Add("Date", typeof(string));
-            dgvContactList.DataSource = table;
         }
-        
 
-        public void WriteToFile()
+        public void ImportFromTextFile()
         {
-            Id++;
+            string[] lines = File.ReadAllLines(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt");
+            string[] values;
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                values = lines[i].ToString().Split('|');
+                string[] row = new string[values.Length];
+
+                for (int j = 0; j < values.Length; j++)
+                {
+                    row[j] = values[j].Trim();
+                }
+                table.Rows.Add(row);
+            }
+            MessageBox.Show(lines.Length.ToString());
+            dgvContactList.Update();
+            dgvContactList.Refresh();
+        }
+
+        public void WriteToTextFile()
+        {
             Name = txtfName.Text + " " + txtlName.Text;
             Age = txtAge.Text;
             Gender = cbGender.GetItemText(cbGender.SelectedItem);
@@ -57,7 +71,7 @@ namespace Contact_Tracing
             Date = DateTime.UtcNow.ToShortDateString();
             StreamWriter sw = new StreamWriter(Application.StartupPath +
                 "\\Contact\\" + "ContactTracing.txt", append: true);
-            sw.WriteLine(Id + "|" + Name + "|" + Age + "|" + Gender + "|" +
+            sw.WriteLine(Name + "|" + Age + "|" + Gender + "|" +
                          ContactNo + "|" + Address + "|" + Type + "|" + Date);
             sw.Flush();
             sw.Close();
@@ -74,9 +88,14 @@ namespace Contact_Tracing
             }
             else
             {
-                WriteToFile();
+                WriteToTextFile();
                 MessageBox.Show("Details saved.", "Message");
             }       
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ImportFromTextFile();
         }
     }
 

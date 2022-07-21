@@ -63,7 +63,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlQR = new System.Windows.Forms.Panel();
             this.pnlList = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.dgvContactList = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
             this.pnlList.SuspendLayout();
@@ -152,6 +154,7 @@
             // 
             // cbType
             // 
+            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Positive",
@@ -167,6 +170,7 @@
             // cbGender
             // 
             this.cbGender.AllowDrop = true;
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Items.AddRange(new object[] {
             "Male",
@@ -392,21 +396,48 @@
             // 
             // pnlList
             // 
+            this.pnlList.Controls.Add(this.label8);
+            this.pnlList.Controls.Add(this.button1);
             this.pnlList.Controls.Add(this.dgvContactList);
             this.pnlList.Location = new System.Drawing.Point(20, 20);
             this.pnlList.Name = "pnlList";
             this.pnlList.Size = new System.Drawing.Size(1200, 600);
             this.pnlList.TabIndex = 35;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(300, 560);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dgvContactList
             // 
+            this.dgvContactList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvContactList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvContactList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvContactList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactList.Location = new System.Drawing.Point(30, 30);
+            this.dgvContactList.Location = new System.Drawing.Point(150, 100);
             this.dgvContactList.Name = "dgvContactList";
             this.dgvContactList.RowHeadersWidth = 62;
             this.dgvContactList.RowTemplate.Height = 33;
-            this.dgvContactList.Size = new System.Drawing.Size(1140, 530);
+            this.dgvContactList.Size = new System.Drawing.Size(870, 400);
             this.dgvContactList.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label8.Location = new System.Drawing.Point(40, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(348, 44);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Health Assistant";
             // 
             // Form1
             // 
@@ -421,11 +452,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Health Assistant";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.pnlSurvey.ResumeLayout(false);
             this.pnlSurvey.PerformLayout();
             this.pnlList.ResumeLayout(false);
+            this.pnlList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             this.ResumeLayout(false);
 
@@ -468,5 +501,7 @@
         private ComboBox cbType;
         private ComboBox cbGender;
         private DataGridView dgvContactList;
+        private Button button1;
+        private Label label8;
     }
 }
