@@ -26,20 +26,18 @@ namespace Contact_Tracing
         public string? Type;
         public string? Date;
        
-        DataTable table = new DataTable();
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Age", typeof(string));
-            table.Columns.Add("Gender", typeof(string));
-            table.Columns.Add("Contact No.", typeof(string));
-            table.Columns.Add("Address", typeof(string));
-            table.Columns.Add("Type", typeof(string));
-            table.Columns.Add("Date", typeof(string));
-        }
-
         public void ImportFromTextFile()
         {
+            DataTable table = new DataTable();
+            table.Columns.Add("Id", typeof(int));
+               table.Columns.Add("First Name", typeof(string));
+                table.Columns.Add("Last Name", typeof(string));
+                table.Columns.Add("Age", typeof(int));
+
+                dataGridView1.DataSource = table;
+
+
+            dgvContactList.Rows.Clear();
             string[] lines = File.ReadAllLines(Application.StartupPath + "\\Contact\\" + "ContactTracing.txt");
             string[] values;
 
@@ -52,11 +50,8 @@ namespace Contact_Tracing
                 {
                     row[j] = values[j].Trim();
                 }
-                table.Rows.Add(row);
+                dgvContactList.Rows.Add(row);
             }
-            MessageBox.Show(lines.Length.ToString());
-            dgvContactList.Update();
-            dgvContactList.Refresh();
         }
 
         public void WriteToTextFile()
@@ -77,9 +72,29 @@ namespace Contact_Tracing
             sw.Close();
         }
 
+        public void ClearAllFields()
+        {
+            txtfName.Clear();
+            txtlName.Clear();
+            txtAge.Clear();
+            txtContactNo.Clear();
+            txtaNo.Clear();
+            txtaSt.Clear();
+            txtaTown.Clear();
+            txtaMunicipal.Clear();
+            cbGender.SelectedIndex = 0;
+            cbType.SelectedIndex = 0;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvContactList. = string.Format("Field = '{0}'", txtSearch.Text);
+        }
+
         private void bttnSave_Click(object sender, EventArgs e)
         {
             if (txtfName.Text == string.Empty || txtlName.Text == string.Empty ||
+                cbGender.SelectedIndex == 0 || cbType.SelectedIndex == 0 ||
                 txtAge.Text == string.Empty || txtContactNo.Text == string.Empty ||
                 txtaNo.Text == string.Empty || txtaSt.Text == string.Empty ||
                 txtaTown.Text == string.Empty || txtaMunicipal.Text == string.Empty)
@@ -89,14 +104,41 @@ namespace Contact_Tracing
             else
             {
                 WriteToTextFile();
+                ClearAllFields();
                 MessageBox.Show("Details saved.", "Message");
             }       
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bttnToSurvey_Click(object sender, EventArgs e)
+        {
+            pnlSurvey.Visible = true;
+            pnlMenu.Visible = false;
+            pnlList.Visible = false;
+        }
+
+        private void bttnToList_Click(object sender, EventArgs e)
         {
             ImportFromTextFile();
+            pnlSurvey.Visible = false;
+            pnlMenu.Visible = false;
+            pnlList.Visible = true;
         }
+
+        private void bttnBackSurvey_Click(object sender, EventArgs e)
+        {
+            ClearAllFields();
+            pnlSurvey.Visible = false;
+            pnlMenu.Visible = true;
+            pnlList.Visible = false;
+        }
+
+        private void bttnBackList_Click(object sender, EventArgs e)
+        {
+            pnlSurvey.Visible = true;
+            pnlMenu.Visible = false;
+            pnlList.Visible = false;
+        }
+
     }
 
 

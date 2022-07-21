@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label label16;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bttnView = new System.Windows.Forms.Button();
-            this.bttnRegister = new System.Windows.Forms.Button();
+            this.bttnToList = new System.Windows.Forms.Button();
+            this.bttnToSurvey = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlSurvey = new System.Windows.Forms.Panel();
             this.cbType = new System.Windows.Forms.ComboBox();
@@ -63,20 +64,39 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlQR = new System.Windows.Forms.Panel();
             this.pnlList = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgvContactList = new System.Windows.Forms.DataGridView();
+            this.bttnBackList = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.dgvContactList = new System.Windows.Forms.DataGridView();
+            this.dataName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataContactNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            label16 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
             this.pnlList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new System.Drawing.Point(60, 100);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(64, 25);
+            label16.TabIndex = 37;
+            label16.Text = "Search";
+            // 
             // pnlMenu
             // 
+            this.pnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlMenu.Controls.Add(this.textBox1);
-            this.pnlMenu.Controls.Add(this.bttnView);
-            this.pnlMenu.Controls.Add(this.bttnRegister);
+            this.pnlMenu.Controls.Add(this.bttnToList);
+            this.pnlMenu.Controls.Add(this.bttnToSurvey);
             this.pnlMenu.Controls.Add(this.label1);
             this.pnlMenu.Location = new System.Drawing.Point(30, 30);
             this.pnlMenu.Name = "pnlMenu";
@@ -85,36 +105,41 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 100);
+            this.textBox1.Location = new System.Drawing.Point(600, 130);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1030, 190);
+            this.textBox1.Size = new System.Drawing.Size(530, 400);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
-            // bttnView
+            // bttnToList
             // 
-            this.bttnView.Location = new System.Drawing.Point(70, 480);
-            this.bttnView.Name = "bttnView";
-            this.bttnView.Size = new System.Drawing.Size(230, 34);
-            this.bttnView.TabIndex = 2;
-            this.bttnView.Text = "View Contact List";
-            this.bttnView.UseVisualStyleBackColor = true;
+            this.bttnToList.Location = new System.Drawing.Point(160, 310);
+            this.bttnToList.Name = "bttnToList";
+            this.bttnToList.Size = new System.Drawing.Size(230, 34);
+            this.bttnToList.TabIndex = 2;
+            this.bttnToList.Text = "View Contact List";
+            this.bttnToList.UseVisualStyleBackColor = true;
+            this.bttnToList.Click += new System.EventHandler(this.bttnToList_Click);
             // 
-            // bttnRegister
+            // bttnToSurvey
             // 
-            this.bttnRegister.Location = new System.Drawing.Point(70, 430);
-            this.bttnRegister.Name = "bttnRegister";
-            this.bttnRegister.Size = new System.Drawing.Size(230, 34);
-            this.bttnRegister.TabIndex = 1;
-            this.bttnRegister.Text = "Register Contact";
-            this.bttnRegister.UseVisualStyleBackColor = true;
+            this.bttnToSurvey.Location = new System.Drawing.Point(160, 250);
+            this.bttnToSurvey.Name = "bttnToSurvey";
+            this.bttnToSurvey.Size = new System.Drawing.Size(230, 34);
+            this.bttnToSurvey.TabIndex = 1;
+            this.bttnToSurvey.Text = "Create New Contact";
+            this.bttnToSurvey.UseVisualStyleBackColor = true;
+            this.bttnToSurvey.Click += new System.EventHandler(this.bttnToSurvey_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 40);
+            this.label1.Font = new System.Drawing.Font("Arial Black", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(30, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 25);
+            this.label1.Size = new System.Drawing.Size(506, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Health Assistant";
             // 
@@ -211,6 +236,7 @@
             this.bttnBackSurvey.TabIndex = 11;
             this.bttnBackSurvey.Text = "Back";
             this.bttnBackSurvey.UseVisualStyleBackColor = true;
+            this.bttnBackSurvey.Click += new System.EventHandler(this.bttnBackSurvey_Click);
             // 
             // label5
             // 
@@ -379,11 +405,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label2.Location = new System.Drawing.Point(40, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(313, 38);
+            this.label2.Size = new System.Drawing.Size(312, 45);
             this.label2.TabIndex = 0;
             this.label2.Text = "Health Assistant";
             // 
@@ -396,23 +422,44 @@
             // 
             // pnlList
             // 
+            this.pnlList.Controls.Add(this.bttnBackList);
+            this.pnlList.Controls.Add(label16);
+            this.pnlList.Controls.Add(this.txtSearch);
             this.pnlList.Controls.Add(this.label8);
-            this.pnlList.Controls.Add(this.button1);
             this.pnlList.Controls.Add(this.dgvContactList);
             this.pnlList.Location = new System.Drawing.Point(20, 20);
             this.pnlList.Name = "pnlList";
             this.pnlList.Size = new System.Drawing.Size(1200, 600);
             this.pnlList.TabIndex = 35;
             // 
-            // button1
+            // bttnBackList
             // 
-            this.button1.Location = new System.Drawing.Point(300, 560);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bttnBackList.Location = new System.Drawing.Point(60, 550);
+            this.bttnBackList.Name = "bttnBackList";
+            this.bttnBackList.Size = new System.Drawing.Size(112, 34);
+            this.bttnBackList.TabIndex = 38;
+            this.bttnBackList.Text = "Back";
+            this.bttnBackList.UseVisualStyleBackColor = true;
+            this.bttnBackList.Click += new System.EventHandler(this.bttnBackList_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(150, 100);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(260, 31);
+            this.txtSearch.TabIndex = 36;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label8.Location = new System.Drawing.Point(40, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(312, 45);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Health Assistant";
             // 
             // dgvContactList
             // 
@@ -421,38 +468,90 @@
             this.dgvContactList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvContactList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactList.Location = new System.Drawing.Point(150, 100);
+            this.dgvContactList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataName,
+            this.dataAge,
+            this.dataGender,
+            this.dataContactNo,
+            this.dataAddress,
+            this.dataType,
+            this.dataDate});
+            this.dgvContactList.Location = new System.Drawing.Point(60, 150);
             this.dgvContactList.Name = "dgvContactList";
             this.dgvContactList.RowHeadersWidth = 62;
             this.dgvContactList.RowTemplate.Height = 33;
-            this.dgvContactList.Size = new System.Drawing.Size(870, 400);
+            this.dgvContactList.Size = new System.Drawing.Size(1100, 350);
             this.dgvContactList.TabIndex = 0;
             // 
-            // label8
+            // dataName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label8.Location = new System.Drawing.Point(40, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(348, 44);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Health Assistant";
+            this.dataName.HeaderText = "Name";
+            this.dataName.MinimumWidth = 8;
+            this.dataName.Name = "dataName";
+            this.dataName.ReadOnly = true;
+            this.dataName.Width = 200;
+            // 
+            // dataAge
+            // 
+            this.dataAge.HeaderText = "Age";
+            this.dataAge.MinimumWidth = 8;
+            this.dataAge.Name = "dataAge";
+            this.dataAge.ReadOnly = true;
+            this.dataAge.Width = 50;
+            // 
+            // dataGender
+            // 
+            this.dataGender.HeaderText = "Gender";
+            this.dataGender.MinimumWidth = 8;
+            this.dataGender.Name = "dataGender";
+            this.dataGender.ReadOnly = true;
+            this.dataGender.Width = 150;
+            // 
+            // dataContactNo
+            // 
+            this.dataContactNo.HeaderText = "Contact No.";
+            this.dataContactNo.MinimumWidth = 8;
+            this.dataContactNo.Name = "dataContactNo";
+            this.dataContactNo.ReadOnly = true;
+            this.dataContactNo.Width = 200;
+            // 
+            // dataAddress
+            // 
+            this.dataAddress.HeaderText = "Address";
+            this.dataAddress.MinimumWidth = 8;
+            this.dataAddress.Name = "dataAddress";
+            this.dataAddress.ReadOnly = true;
+            this.dataAddress.Width = 200;
+            // 
+            // dataType
+            // 
+            this.dataType.HeaderText = "Type";
+            this.dataType.MinimumWidth = 8;
+            this.dataType.Name = "dataType";
+            this.dataType.ReadOnly = true;
+            this.dataType.Width = 200;
+            // 
+            // dataDate
+            // 
+            this.dataDate.HeaderText = "Date Recorded";
+            this.dataDate.MinimumWidth = 8;
+            this.dataDate.Name = "dataDate";
+            this.dataDate.ReadOnly = true;
+            this.dataDate.Width = 200;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlList);
             this.Controls.Add(this.pnlSurvey);
-            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlQR);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Health Assistant";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.pnlSurvey.ResumeLayout(false);
@@ -467,9 +566,8 @@
         #endregion
 
         private Panel pnlMenu;
-        private TextBox textBox1;
-        private Button bttnView;
-        private Button bttnRegister;
+        private Button bttnToList;
+        private Button bttnToSurvey;
         private Label label1;
         private Panel pnlSurvey;
         private TextBox txtAge;
@@ -501,7 +599,16 @@
         private ComboBox cbType;
         private ComboBox cbGender;
         private DataGridView dgvContactList;
-        private Button button1;
         private Label label8;
+        private DataGridViewTextBoxColumn dataName;
+        private DataGridViewTextBoxColumn dataAge;
+        private DataGridViewTextBoxColumn dataGender;
+        private DataGridViewTextBoxColumn dataContactNo;
+        private DataGridViewTextBoxColumn dataAddress;
+        private DataGridViewTextBoxColumn dataType;
+        private DataGridViewTextBoxColumn dataDate;
+        private Button bttnBackList;
+        private TextBox txtSearch;
+        private TextBox textBox1;
     }
 }
