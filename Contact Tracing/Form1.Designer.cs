@@ -68,13 +68,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvContactList = new System.Windows.Forms.DataGridView();
-            this.dataName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataContactNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label16 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
@@ -463,81 +456,20 @@
             // 
             // dgvContactList
             // 
+            this.dgvContactList.AllowUserToAddRows = false;
+            this.dgvContactList.AllowUserToDeleteRows = false;
+            this.dgvContactList.AllowUserToOrderColumns = true;
             this.dgvContactList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvContactList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvContactList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvContactList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataName,
-            this.dataAge,
-            this.dataGender,
-            this.dataContactNo,
-            this.dataAddress,
-            this.dataType,
-            this.dataDate});
             this.dgvContactList.Location = new System.Drawing.Point(60, 150);
             this.dgvContactList.Name = "dgvContactList";
             this.dgvContactList.RowHeadersWidth = 62;
             this.dgvContactList.RowTemplate.Height = 33;
             this.dgvContactList.Size = new System.Drawing.Size(1100, 350);
             this.dgvContactList.TabIndex = 0;
-            // 
-            // dataName
-            // 
-            this.dataName.HeaderText = "Name";
-            this.dataName.MinimumWidth = 8;
-            this.dataName.Name = "dataName";
-            this.dataName.ReadOnly = true;
-            this.dataName.Width = 200;
-            // 
-            // dataAge
-            // 
-            this.dataAge.HeaderText = "Age";
-            this.dataAge.MinimumWidth = 8;
-            this.dataAge.Name = "dataAge";
-            this.dataAge.ReadOnly = true;
-            this.dataAge.Width = 50;
-            // 
-            // dataGender
-            // 
-            this.dataGender.HeaderText = "Gender";
-            this.dataGender.MinimumWidth = 8;
-            this.dataGender.Name = "dataGender";
-            this.dataGender.ReadOnly = true;
-            this.dataGender.Width = 150;
-            // 
-            // dataContactNo
-            // 
-            this.dataContactNo.HeaderText = "Contact No.";
-            this.dataContactNo.MinimumWidth = 8;
-            this.dataContactNo.Name = "dataContactNo";
-            this.dataContactNo.ReadOnly = true;
-            this.dataContactNo.Width = 200;
-            // 
-            // dataAddress
-            // 
-            this.dataAddress.HeaderText = "Address";
-            this.dataAddress.MinimumWidth = 8;
-            this.dataAddress.Name = "dataAddress";
-            this.dataAddress.ReadOnly = true;
-            this.dataAddress.Width = 200;
-            // 
-            // dataType
-            // 
-            this.dataType.HeaderText = "Type";
-            this.dataType.MinimumWidth = 8;
-            this.dataType.Name = "dataType";
-            this.dataType.ReadOnly = true;
-            this.dataType.Width = 200;
-            // 
-            // dataDate
-            // 
-            this.dataDate.HeaderText = "Date Recorded";
-            this.dataDate.MinimumWidth = 8;
-            this.dataDate.Name = "dataDate";
-            this.dataDate.ReadOnly = true;
-            this.dataDate.Width = 200;
             // 
             // Form1
             // 
@@ -552,6 +484,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Health Assistant";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.pnlSurvey.ResumeLayout(false);
@@ -600,13 +533,6 @@
         private ComboBox cbGender;
         private DataGridView dgvContactList;
         private Label label8;
-        private DataGridViewTextBoxColumn dataName;
-        private DataGridViewTextBoxColumn dataAge;
-        private DataGridViewTextBoxColumn dataGender;
-        private DataGridViewTextBoxColumn dataContactNo;
-        private DataGridViewTextBoxColumn dataAddress;
-        private DataGridViewTextBoxColumn dataType;
-        private DataGridViewTextBoxColumn dataDate;
         private Button bttnBackList;
         private TextBox txtSearch;
         private TextBox textBox1;
