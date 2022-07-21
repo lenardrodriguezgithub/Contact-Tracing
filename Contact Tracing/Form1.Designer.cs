@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label16;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -63,14 +64,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlQR = new System.Windows.Forms.Panel();
+            this.bttnSaveQR = new System.Windows.Forms.Button();
+            this.bttnBackQR = new System.Windows.Forms.Button();
+            this.txtQRResult = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.bttnScan = new System.Windows.Forms.Button();
+            this.cbDevice = new System.Windows.Forms.ComboBox();
+            this.pbQR = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.pnlList = new System.Windows.Forms.Panel();
             this.bttnBackList = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvContactList = new System.Windows.Forms.DataGridView();
+            this.timerQR = new System.Windows.Forms.Timer(this.components);
             label16 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
+            this.pnlQR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
             this.pnlList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
@@ -408,10 +420,90 @@
             // 
             // pnlQR
             // 
+            this.pnlQR.Controls.Add(this.bttnSaveQR);
+            this.pnlQR.Controls.Add(this.bttnBackQR);
+            this.pnlQR.Controls.Add(this.txtQRResult);
+            this.pnlQR.Controls.Add(this.label18);
+            this.pnlQR.Controls.Add(this.bttnScan);
+            this.pnlQR.Controls.Add(this.cbDevice);
+            this.pnlQR.Controls.Add(this.pbQR);
+            this.pnlQR.Controls.Add(this.label17);
             this.pnlQR.Location = new System.Drawing.Point(30, 30);
             this.pnlQR.Name = "pnlQR";
             this.pnlQR.Size = new System.Drawing.Size(1200, 600);
             this.pnlQR.TabIndex = 0;
+            // 
+            // bttnSaveQR
+            // 
+            this.bttnSaveQR.Location = new System.Drawing.Point(1040, 530);
+            this.bttnSaveQR.Name = "bttnSaveQR";
+            this.bttnSaveQR.Size = new System.Drawing.Size(112, 34);
+            this.bttnSaveQR.TabIndex = 7;
+            this.bttnSaveQR.Text = "Save";
+            this.bttnSaveQR.UseVisualStyleBackColor = true;
+            // 
+            // bttnBackQR
+            // 
+            this.bttnBackQR.Location = new System.Drawing.Point(60, 520);
+            this.bttnBackQR.Name = "bttnBackQR";
+            this.bttnBackQR.Size = new System.Drawing.Size(112, 34);
+            this.bttnBackQR.TabIndex = 6;
+            this.bttnBackQR.Text = "Back";
+            this.bttnBackQR.UseVisualStyleBackColor = true;
+            // 
+            // txtQRResult
+            // 
+            this.txtQRResult.Location = new System.Drawing.Point(160, 190);
+            this.txtQRResult.Multiline = true;
+            this.txtQRResult.Name = "txtQRResult";
+            this.txtQRResult.Size = new System.Drawing.Size(360, 220);
+            this.txtQRResult.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(150, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(68, 25);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Device:";
+            // 
+            // bttnScan
+            // 
+            this.bttnScan.Location = new System.Drawing.Point(290, 440);
+            this.bttnScan.Name = "bttnScan";
+            this.bttnScan.Size = new System.Drawing.Size(112, 34);
+            this.bttnScan.TabIndex = 3;
+            this.bttnScan.Text = "Scan QR";
+            this.bttnScan.UseVisualStyleBackColor = true;
+            this.bttnScan.Click += new System.EventHandler(this.bttnScan_Click);
+            // 
+            // cbDevice
+            // 
+            this.cbDevice.FormattingEnabled = true;
+            this.cbDevice.Location = new System.Drawing.Point(250, 120);
+            this.cbDevice.Name = "cbDevice";
+            this.cbDevice.Size = new System.Drawing.Size(210, 33);
+            this.cbDevice.TabIndex = 2;
+            // 
+            // pbQR
+            // 
+            this.pbQR.Location = new System.Drawing.Point(650, 90);
+            this.pbQR.Name = "pbQR";
+            this.pbQR.Size = new System.Drawing.Size(400, 400);
+            this.pbQR.TabIndex = 1;
+            this.pbQR.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label17.Location = new System.Drawing.Point(20, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(292, 45);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Health Assitant";
             // 
             // pnlList
             // 
@@ -471,24 +563,33 @@
             this.dgvContactList.Size = new System.Drawing.Size(1100, 350);
             this.dgvContactList.TabIndex = 0;
             // 
+            // timerQR
+            // 
+            this.timerQR.Interval = 1000;
+            this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.pnlQR);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlList);
             this.Controls.Add(this.pnlSurvey);
-            this.Controls.Add(this.pnlQR);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Health Assistant";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.pnlSurvey.ResumeLayout(false);
             this.pnlSurvey.PerformLayout();
+            this.pnlQR.ResumeLayout(false);
+            this.pnlQR.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQR)).EndInit();
             this.pnlList.ResumeLayout(false);
             this.pnlList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
@@ -536,5 +637,14 @@
         private Button bttnBackList;
         private TextBox txtSearch;
         private TextBox textBox1;
+        private Button bttnBackQR;
+        private TextBox txtQRResult;
+        private Label label18;
+        private Button bttnScan;
+        private ComboBox cbDevice;
+        private PictureBox pbQR;
+        private Label label17;
+        private Button bttnSaveQR;
+        private System.Windows.Forms.Timer timerQR;
     }
 }
