@@ -112,8 +112,11 @@ namespace Contact_Tracing
                 else
                 {
                     WriteToTextFile();
-                    ClearAllFields();
                     MessageBox.Show("Details saved.", "Message");
+                    pnlSurvey.Visible = false;
+                    pnlMenu.Visible = true;
+                    pnlList.Visible = false; 
+                    ClearAllFields();
                 }
             }
             catch
