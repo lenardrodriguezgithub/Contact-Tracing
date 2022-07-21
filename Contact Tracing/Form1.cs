@@ -23,10 +23,18 @@ namespace Contact_Tracing
 
         public void WriteToFile()
         {
-            ID += ID;
+            ID++;
+            Name = txtfName.Text + " " + txtlName.Text;
+            Age = txtAge.Text;
+            Gender = cbGender.GetItemText(cbGender.SelectedItem);
+            ContactNo = txtContactNo.Text;
+            Address = txtaNo.Text + " " + txtaSt.Text + ", " +
+                txtaTown.Text + ", " + txtaMunicipal.Text;
+            Type = cbType.GetItemText(cbType.SelectedItem);
+            Date = DateTime.UtcNow.ToShortDateString();
             StreamWriter sw = new StreamWriter(Application.StartupPath +
                 "\\Contact\\" + "ContactTracing.txt", append: true);
-            sw.WriteLine(Name + "|" + Age + "|" + Gender + "|" +
+            sw.WriteLine(ID + "|" + Name + "|" + Age + "|" + Gender + "|" +
                          ContactNo + "|" + Address + "|" + Type + "|" + Date);
             sw.Flush();
             sw.Close();
@@ -48,16 +56,8 @@ namespace Contact_Tracing
             }
             else
             {
-                Name = txtfName.Text + " " + txtlName.Text;
-                Age = txtAge.Text;
-                Gender = cbGender.GetItemText(cbGender.SelectedItem);
-                ContactNo = txtContactNo.Text;
-                Address = txtaNo.Text + txtaSt.Text + ", " + 
-                    txtaTown.Text + ", " + txtaMunicipal.Text;
-                Type = cbType.GetItemText(cbType.SelectedItem);
-                DateTime today = DateTime.Today;
-                Date = today.ToString();
                 WriteToFile();
+                Confirm();
             }       
         }
     }
