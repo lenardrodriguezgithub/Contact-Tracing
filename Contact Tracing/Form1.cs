@@ -1,7 +1,13 @@
 using System;
-using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Contact_Tracing
 {
@@ -12,7 +18,7 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
-        public int? ID = 0;
+        public int? Id = 0;
         public string? Name;
         public string? Age;
         public string? Gender;
@@ -21,9 +27,25 @@ namespace Contact_Tracing
         public string? Type;
         public string? Date;
 
+        //Application.StartupPath +
+        //        "\\Contact\\" + "ContactTracing.txt"
+        DataTable table = new DataTable();
+        private void CreateDataGridView(object sender, EventArgs e)
+        {
+            table.Columns.Add("Id", typeof(string));
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Age", typeof(string));
+            table.Columns.Add("Gender", typeof(string));
+            table.Columns.Add("Contact No.", typeof(string));
+            table.Columns.Add("Address", typeof(string));
+            table.Columns.Add("Type", typeof(string));
+            table.Columns.Add("Date", typeof(string));
+            dgvContactList.DataSource = table;
+        }
+
         public void WriteToFile()
         {
-            ID++;
+            Id++;
             Name = txtfName.Text + " " + txtlName.Text;
             Age = txtAge.Text;
             Gender = cbGender.GetItemText(cbGender.SelectedItem);
@@ -34,15 +56,10 @@ namespace Contact_Tracing
             Date = DateTime.UtcNow.ToShortDateString();
             StreamWriter sw = new StreamWriter(Application.StartupPath +
                 "\\Contact\\" + "ContactTracing.txt", append: true);
-            sw.WriteLine(ID + "|" + Name + "|" + Age + "|" + Gender + "|" +
+            sw.WriteLine(Id + "|" + Name + "|" + Age + "|" + Gender + "|" +
                          ContactNo + "|" + Address + "|" + Type + "|" + Date);
             sw.Flush();
             sw.Close();
-        }
-
-        public void Confirm()
-        {
-            MessageBox.Show("Details saved.", "Message");
         }
 
         private void bttnSave_Click(object sender, EventArgs e)
@@ -57,7 +74,7 @@ namespace Contact_Tracing
             else
             {
                 WriteToFile();
-                Confirm();
+                MessageBox.Show("Details saved.", "Message");
             }       
         }
     }
