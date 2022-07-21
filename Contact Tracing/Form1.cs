@@ -30,7 +30,7 @@ namespace Contact_Tracing
         //Application.StartupPath +
         //        "\\Contact\\" + "ContactTracing.txt"
         DataTable table = new DataTable();
-        private void CreateDataGridView(object sender, EventArgs e)
+        private void CreateDataGridView_Load(object sender, EventArgs e)
         {
             table.Columns.Add("Id", typeof(string));
             table.Columns.Add("Name", typeof(string));
@@ -42,6 +42,7 @@ namespace Contact_Tracing
             table.Columns.Add("Date", typeof(string));
             dgvContactList.DataSource = table;
         }
+        
 
         public void WriteToFile()
         {
