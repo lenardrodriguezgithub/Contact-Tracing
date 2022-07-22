@@ -10,8 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using ZXing;
-
+using IronBarCode;
 
 namespace Contact_Tracing
 {
@@ -22,8 +21,6 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice captureDevice;
         DataTable table = new DataTable();
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,12 +33,12 @@ namespace Contact_Tracing
             table.Columns.Add("Date", typeof(string));
             dgvContactList.DataSource = table;
 
-
+            VideoCaptureDevice videoCaptureDevice;
         }
 
         private void bttnScan_Click(object sender, EventArgs e)
         {
-
+            
         }
 
 
