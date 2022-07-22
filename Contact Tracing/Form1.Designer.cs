@@ -66,11 +66,11 @@
             this.pnlQR = new System.Windows.Forms.Panel();
             this.bttnSaveQR = new System.Windows.Forms.Button();
             this.bttnBackQR = new System.Windows.Forms.Button();
-            this.txtQRResult = new System.Windows.Forms.TextBox();
+            this.txtQRText = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.bttnScan = new System.Windows.Forms.Button();
             this.cbDevice = new System.Windows.Forms.ComboBox();
-            this.pbQR = new System.Windows.Forms.PictureBox();
+            this.pbCamDisplay = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlList = new System.Windows.Forms.Panel();
             this.bttnBackList = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
             this.pnlQR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCamDisplay)).BeginInit();
             this.pnlList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
@@ -422,11 +422,11 @@
             // 
             this.pnlQR.Controls.Add(this.bttnSaveQR);
             this.pnlQR.Controls.Add(this.bttnBackQR);
-            this.pnlQR.Controls.Add(this.txtQRResult);
+            this.pnlQR.Controls.Add(this.txtQRText);
             this.pnlQR.Controls.Add(this.label18);
             this.pnlQR.Controls.Add(this.bttnScan);
             this.pnlQR.Controls.Add(this.cbDevice);
-            this.pnlQR.Controls.Add(this.pbQR);
+            this.pnlQR.Controls.Add(this.pbCamDisplay);
             this.pnlQR.Controls.Add(this.label17);
             this.pnlQR.Location = new System.Drawing.Point(30, 30);
             this.pnlQR.Name = "pnlQR";
@@ -435,7 +435,7 @@
             // 
             // bttnSaveQR
             // 
-            this.bttnSaveQR.Location = new System.Drawing.Point(1040, 530);
+            this.bttnSaveQR.Location = new System.Drawing.Point(1040, 520);
             this.bttnSaveQR.Name = "bttnSaveQR";
             this.bttnSaveQR.Size = new System.Drawing.Size(112, 34);
             this.bttnSaveQR.TabIndex = 7;
@@ -451,13 +451,13 @@
             this.bttnBackQR.Text = "Back";
             this.bttnBackQR.UseVisualStyleBackColor = true;
             // 
-            // txtQRResult
+            // txtQRText
             // 
-            this.txtQRResult.Location = new System.Drawing.Point(160, 190);
-            this.txtQRResult.Multiline = true;
-            this.txtQRResult.Name = "txtQRResult";
-            this.txtQRResult.Size = new System.Drawing.Size(360, 220);
-            this.txtQRResult.TabIndex = 5;
+            this.txtQRText.Location = new System.Drawing.Point(190, 180);
+            this.txtQRText.Multiline = true;
+            this.txtQRText.Name = "txtQRText";
+            this.txtQRText.Size = new System.Drawing.Size(320, 200);
+            this.txtQRText.TabIndex = 5;
             // 
             // label18
             // 
@@ -470,7 +470,7 @@
             // 
             // bttnScan
             // 
-            this.bttnScan.Location = new System.Drawing.Point(290, 440);
+            this.bttnScan.Location = new System.Drawing.Point(530, 520);
             this.bttnScan.Name = "bttnScan";
             this.bttnScan.Size = new System.Drawing.Size(112, 34);
             this.bttnScan.TabIndex = 3;
@@ -486,13 +486,13 @@
             this.cbDevice.Size = new System.Drawing.Size(210, 33);
             this.cbDevice.TabIndex = 2;
             // 
-            // pbQR
+            // pbCamDisplay
             // 
-            this.pbQR.Location = new System.Drawing.Point(650, 90);
-            this.pbQR.Name = "pbQR";
-            this.pbQR.Size = new System.Drawing.Size(400, 400);
-            this.pbQR.TabIndex = 1;
-            this.pbQR.TabStop = false;
+            this.pbCamDisplay.Location = new System.Drawing.Point(650, 90);
+            this.pbCamDisplay.Name = "pbCamDisplay";
+            this.pbCamDisplay.Size = new System.Drawing.Size(400, 400);
+            this.pbCamDisplay.TabIndex = 1;
+            this.pbCamDisplay.TabStop = false;
             // 
             // label17
             // 
@@ -588,7 +588,7 @@
             this.pnlSurvey.PerformLayout();
             this.pnlQR.ResumeLayout(false);
             this.pnlQR.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCamDisplay)).EndInit();
             this.pnlList.ResumeLayout(false);
             this.pnlList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
@@ -637,11 +637,11 @@
         private TextBox txtSearch;
         private TextBox textBox1;
         private Button bttnBackQR;
-        private TextBox txtQRResult;
+        private TextBox txtQRText;
         private Label label18;
         private Button bttnScan;
         private ComboBox cbDevice;
-        private PictureBox pbQR;
+        private PictureBox pbCamDisplay;
         private Label label17;
         private Button bttnSaveQR;
         private System.Windows.Forms.Timer timerQR;

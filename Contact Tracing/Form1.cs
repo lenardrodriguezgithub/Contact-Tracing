@@ -5,11 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using System.Drawing.Imaging;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using AForge.Imaging;
+using AForge.Imaging.Filters;
+using AForge;
 using IronBarCode;
 
 namespace Contact_Tracing
@@ -21,6 +25,8 @@ namespace Contact_Tracing
             InitializeComponent();
         }
 
+        FilterInfoCollection CaptureDevice;
+        VideoCaptureDevice FinalFrame;
         DataTable table = new DataTable();
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -33,20 +39,34 @@ namespace Contact_Tracing
             table.Columns.Add("Date", typeof(string));
             dgvContactList.DataSource = table;
 
-            VideoCaptureDevice videoCaptureDevice;
+            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo Device in CaptureDevice)
+            {
+                cbDevice.Items.Add(Device.Name);
+            }
+
+            cbDevice.SelectedIndex = 0;
+            FinalFrame = new VideoCaptureDevice();
         }
 
         private void bttnScan_Click(object sender, EventArgs e)
         {
-            
+            FinalFrame = new VideoCaptureDevice(CaptureDevice[cbDevice.SelectedIndex].MonikerString);// specified web cam and its filter moniker string
+            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);// click button event is fired, 
+            FinalFrame.Start();
         }
 
-
-
-        private void timerQR_Tick(object sender, EventArgs e)
+        void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-
+            pbCamDisplay.Image = (Bitmap)eventArgs.Frame.Clone();
         }
+
+        private void From1_CLosing(object sender, EventArgs e)
+        {
+            if (FinalFrame.IsRunning == true) FinalFrame.Stop();
+        }
+
+        
 
         public string? Name;
         public string? Age;
