@@ -24,9 +24,8 @@ namespace Contact_Tracing
         {
             InitializeComponent();
         }
-
-        FilterInfoCollection CaptureDevice;
-        VideoCaptureDevice FinalFrame;
+        FilterInfoCollection VideoCaptureDevices;
+        VideoCaptureDevice FinalVideo;
         DataTable table = new DataTable();
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,34 +38,48 @@ namespace Contact_Tracing
             table.Columns.Add("Date", typeof(string));
             dgvContactList.DataSource = table;
 
-            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo Device in CaptureDevice)
+            VideoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices)
             {
-                cbDevice.Items.Add(Device.Name);
+                cbDevices.Items.Add(VideoCaptureDevice.Name);
+            }
+            cbDevices.SelectedIndex = 0;
+        }
+
+        private void bttnScanQR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(FinalVideo.IsRunning == false)
+                {
+                    FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[cbDevices.SelectedIndex].MonikerString);
+                    FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
+                    FinalVideo.Start();
+                    bttnQR.Text = "Stop";
+                }
+                else
+                {
+                    FinalVideo.Stop();
+                    bttnQR.Text = "Scan QR";
+                }
+            }
+            catch
+            {
+                MessageBox.Show("There was an error!", "Error Message");
+                txtQRResult.Clear();
+                pnlSurvey.Visible = false;
+                pnlMenu.Visible = true;
+                pnlList.Visible = false;
+                pnlQR.Visible = false;
             }
 
-            cbDevice.SelectedIndex = 0;
-            FinalFrame = new VideoCaptureDevice();
         }
 
-        private void bttnScan_Click(object sender, EventArgs e)
+        void FinalVideo_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            FinalFrame = new VideoCaptureDevice(CaptureDevice[cbDevice.SelectedIndex].MonikerString);// specified web cam and its filter moniker string
-            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);// click button event is fired, 
-            FinalFrame.Start();
+            Bitmap video = (Bitmap)eventArgs.Frame.Clone();
+            pbCamDisplay.Image = video;
         }
-
-        void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            pbCamDisplay.Image = (Bitmap)eventArgs.Frame.Clone();
-        }
-
-        private void From1_CLosing(object sender, EventArgs e)
-        {
-            if (FinalFrame.IsRunning == true) FinalFrame.Stop();
-        }
-
-        
 
         public string? Name;
         public string? Age;
@@ -192,9 +205,27 @@ namespace Contact_Tracing
             pnlSurvey.Visible = false;
             pnlMenu.Visible = true;
             pnlList.Visible = false;
+            pnlQR.Visible = false;
         }
 
+        private void bttnQR_Click(object sender, EventArgs e)
+        {
+            pnlSurvey.Visible = false;
+            pnlMenu.Visible = false;
+            pnlList.Visible = false;
+            pnlQR.Visible = true;
+        }
 
+        private void bttnBackQR_Click(object sender, EventArgs e)
+        {
+            txtQRResult.Clear();
+            pnlSurvey.Visible = false;
+            pnlMenu.Visible = true;
+            pnlList.Visible = false;
+            pnlQR.Visible = false;
+        }
+
+        
     }
 
 

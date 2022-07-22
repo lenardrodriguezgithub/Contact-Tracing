@@ -64,12 +64,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlQR = new System.Windows.Forms.Panel();
+            this.bttnScanQR = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.bttnSaveQR = new System.Windows.Forms.Button();
             this.bttnBackQR = new System.Windows.Forms.Button();
-            this.txtQRText = new System.Windows.Forms.TextBox();
+            this.txtQRResult = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.bttnScan = new System.Windows.Forms.Button();
-            this.cbDevice = new System.Windows.Forms.ComboBox();
+            this.cbDevices = new System.Windows.Forms.ComboBox();
             this.pbCamDisplay = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlList = new System.Windows.Forms.Panel();
@@ -232,6 +233,7 @@
             this.bttnQR.TabIndex = 12;
             this.bttnQR.Text = "Scan QR";
             this.bttnQR.UseVisualStyleBackColor = true;
+            this.bttnQR.Click += new System.EventHandler(this.bttnQR_Click);
             // 
             // bttnBackSurvey
             // 
@@ -420,12 +422,13 @@
             // 
             // pnlQR
             // 
+            this.pnlQR.Controls.Add(this.bttnScanQR);
+            this.pnlQR.Controls.Add(this.label19);
             this.pnlQR.Controls.Add(this.bttnSaveQR);
             this.pnlQR.Controls.Add(this.bttnBackQR);
-            this.pnlQR.Controls.Add(this.txtQRText);
+            this.pnlQR.Controls.Add(this.txtQRResult);
             this.pnlQR.Controls.Add(this.label18);
-            this.pnlQR.Controls.Add(this.bttnScan);
-            this.pnlQR.Controls.Add(this.cbDevice);
+            this.pnlQR.Controls.Add(this.cbDevices);
             this.pnlQR.Controls.Add(this.pbCamDisplay);
             this.pnlQR.Controls.Add(this.label17);
             this.pnlQR.Location = new System.Drawing.Point(30, 30);
@@ -433,9 +436,28 @@
             this.pnlQR.Size = new System.Drawing.Size(1200, 600);
             this.pnlQR.TabIndex = 0;
             // 
+            // bttnScanQR
+            // 
+            this.bttnScanQR.Location = new System.Drawing.Point(550, 510);
+            this.bttnScanQR.Name = "bttnScanQR";
+            this.bttnScanQR.Size = new System.Drawing.Size(112, 34);
+            this.bttnScanQR.TabIndex = 9;
+            this.bttnScanQR.Text = "Scan QR";
+            this.bttnScanQR.UseVisualStyleBackColor = true;
+            this.bttnScanQR.Click += new System.EventHandler(this.bttnScanQR_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(680, 200);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 25);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Result:";
+            // 
             // bttnSaveQR
             // 
-            this.bttnSaveQR.Location = new System.Drawing.Point(1040, 520);
+            this.bttnSaveQR.Location = new System.Drawing.Point(1030, 510);
             this.bttnSaveQR.Name = "bttnSaveQR";
             this.bttnSaveQR.Size = new System.Drawing.Size(112, 34);
             this.bttnSaveQR.TabIndex = 7;
@@ -450,47 +472,38 @@
             this.bttnBackQR.TabIndex = 6;
             this.bttnBackQR.Text = "Back";
             this.bttnBackQR.UseVisualStyleBackColor = true;
+            this.bttnBackQR.Click += new System.EventHandler(this.bttnBackQR_Click);
             // 
-            // txtQRText
+            // txtQRResult
             // 
-            this.txtQRText.Location = new System.Drawing.Point(190, 180);
-            this.txtQRText.Multiline = true;
-            this.txtQRText.Name = "txtQRText";
-            this.txtQRText.Size = new System.Drawing.Size(320, 200);
-            this.txtQRText.TabIndex = 5;
+            this.txtQRResult.Location = new System.Drawing.Point(680, 250);
+            this.txtQRResult.Multiline = true;
+            this.txtQRResult.Name = "txtQRResult";
+            this.txtQRResult.Size = new System.Drawing.Size(480, 100);
+            this.txtQRResult.TabIndex = 5;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(150, 120);
+            this.label18.Location = new System.Drawing.Point(200, 100);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(68, 25);
             this.label18.TabIndex = 4;
             this.label18.Text = "Device:";
             // 
-            // bttnScan
+            // cbDevices
             // 
-            this.bttnScan.Location = new System.Drawing.Point(530, 520);
-            this.bttnScan.Name = "bttnScan";
-            this.bttnScan.Size = new System.Drawing.Size(112, 34);
-            this.bttnScan.TabIndex = 3;
-            this.bttnScan.Text = "Scan QR";
-            this.bttnScan.UseVisualStyleBackColor = true;
-            this.bttnScan.Click += new System.EventHandler(this.bttnScan_Click);
-            // 
-            // cbDevice
-            // 
-            this.cbDevice.FormattingEnabled = true;
-            this.cbDevice.Location = new System.Drawing.Point(250, 120);
-            this.cbDevice.Name = "cbDevice";
-            this.cbDevice.Size = new System.Drawing.Size(210, 33);
-            this.cbDevice.TabIndex = 2;
+            this.cbDevices.FormattingEnabled = true;
+            this.cbDevices.Location = new System.Drawing.Point(290, 100);
+            this.cbDevices.Name = "cbDevices";
+            this.cbDevices.Size = new System.Drawing.Size(210, 33);
+            this.cbDevices.TabIndex = 2;
             // 
             // pbCamDisplay
             // 
-            this.pbCamDisplay.Location = new System.Drawing.Point(650, 90);
+            this.pbCamDisplay.Location = new System.Drawing.Point(210, 160);
             this.pbCamDisplay.Name = "pbCamDisplay";
-            this.pbCamDisplay.Size = new System.Drawing.Size(400, 400);
+            this.pbCamDisplay.Size = new System.Drawing.Size(320, 320);
             this.pbCamDisplay.TabIndex = 1;
             this.pbCamDisplay.TabStop = false;
             // 
@@ -566,7 +579,6 @@
             // timerQR
             // 
             this.timerQR.Interval = 1000;
-            this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
             // 
             // Form1
             // 
@@ -637,13 +649,14 @@
         private TextBox txtSearch;
         private TextBox textBox1;
         private Button bttnBackQR;
-        private TextBox txtQRText;
+        private TextBox txtQRResult;
         private Label label18;
-        private Button bttnScan;
-        private ComboBox cbDevice;
+        private ComboBox cbDevices;
         private PictureBox pbCamDisplay;
         private Label label17;
         private Button bttnSaveQR;
         private System.Windows.Forms.Timer timerQR;
+        private Label label19;
+        private Button bttnScanQR;
     }
 }
