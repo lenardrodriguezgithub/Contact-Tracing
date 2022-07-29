@@ -179,6 +179,7 @@ namespace Contact_Tracing
 
         private void bttnToSurvey_Click(object sender, EventArgs e)
         {
+            pnlQR.Visible = false;
             pnlSurvey.Visible = true;
             pnlMenu.Visible = false;
             pnlList.Visible = false;
@@ -190,6 +191,7 @@ namespace Contact_Tracing
             pnlSurvey.Visible = false;
             pnlMenu.Visible = false;
             pnlList.Visible = true;
+            pnlQR.Visible = false;
         }
 
         private void bttnBackSurvey_Click(object sender, EventArgs e)
@@ -198,6 +200,7 @@ namespace Contact_Tracing
             pnlSurvey.Visible = false;
             pnlMenu.Visible = true;
             pnlList.Visible = false;
+            pnlQR.Visible = false;
         }
 
         private void bttnBackList_Click(object sender, EventArgs e)
