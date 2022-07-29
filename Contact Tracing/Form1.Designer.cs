@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label16;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -64,26 +63,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlQR = new System.Windows.Forms.Panel();
-            this.bttnScanQR = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.bttnSaveQR = new System.Windows.Forms.Button();
+            this.bttnSaveResult = new System.Windows.Forms.Button();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.txtFile = new System.Windows.Forms.TextBox();
+            this.bttnOpen = new System.Windows.Forms.Button();
             this.bttnBackQR = new System.Windows.Forms.Button();
-            this.txtQRResult = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.cbDevices = new System.Windows.Forms.ComboBox();
-            this.pbCamDisplay = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pnlList = new System.Windows.Forms.Panel();
             this.bttnBackList = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvContactList = new System.Windows.Forms.DataGridView();
-            this.timerQR = new System.Windows.Forms.Timer(this.components);
             label16 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSurvey.SuspendLayout();
             this.pnlQR.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCamDisplay)).BeginInit();
             this.pnlList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
@@ -422,90 +416,61 @@
             // 
             // pnlQR
             // 
-            this.pnlQR.Controls.Add(this.bttnScanQR);
-            this.pnlQR.Controls.Add(this.label19);
-            this.pnlQR.Controls.Add(this.bttnSaveQR);
+            this.pnlQR.Controls.Add(this.bttnSaveResult);
+            this.pnlQR.Controls.Add(this.txtResult);
+            this.pnlQR.Controls.Add(this.txtFile);
+            this.pnlQR.Controls.Add(this.bttnOpen);
             this.pnlQR.Controls.Add(this.bttnBackQR);
-            this.pnlQR.Controls.Add(this.txtQRResult);
-            this.pnlQR.Controls.Add(this.label18);
-            this.pnlQR.Controls.Add(this.cbDevices);
-            this.pnlQR.Controls.Add(this.pbCamDisplay);
             this.pnlQR.Controls.Add(this.label17);
             this.pnlQR.Location = new System.Drawing.Point(30, 30);
             this.pnlQR.Name = "pnlQR";
             this.pnlQR.Size = new System.Drawing.Size(1200, 600);
             this.pnlQR.TabIndex = 0;
             // 
-            // bttnScanQR
+            // bttnSaveResult
             // 
-            this.bttnScanQR.Location = new System.Drawing.Point(550, 510);
-            this.bttnScanQR.Name = "bttnScanQR";
-            this.bttnScanQR.Size = new System.Drawing.Size(112, 34);
-            this.bttnScanQR.TabIndex = 9;
-            this.bttnScanQR.Text = "Scan QR";
-            this.bttnScanQR.UseVisualStyleBackColor = true;
-            this.bttnScanQR.Click += new System.EventHandler(this.bttnScanQR_Click);
+            this.bttnSaveResult.Location = new System.Drawing.Point(1020, 520);
+            this.bttnSaveResult.Name = "bttnSaveResult";
+            this.bttnSaveResult.Size = new System.Drawing.Size(112, 34);
+            this.bttnSaveResult.TabIndex = 12;
+            this.bttnSaveResult.Text = "Save";
+            this.bttnSaveResult.UseVisualStyleBackColor = true;
+            this.bttnSaveResult.Click += new System.EventHandler(this.bttnSaveResult_Click);
             // 
-            // label19
+            // txtResult
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(680, 200);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 25);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Result:";
+            this.txtResult.Location = new System.Drawing.Point(340, 280);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.Size = new System.Drawing.Size(580, 130);
+            this.txtResult.TabIndex = 10;
             // 
-            // bttnSaveQR
+            // txtFile
             // 
-            this.bttnSaveQR.Location = new System.Drawing.Point(1030, 510);
-            this.bttnSaveQR.Name = "bttnSaveQR";
-            this.bttnSaveQR.Size = new System.Drawing.Size(112, 34);
-            this.bttnSaveQR.TabIndex = 7;
-            this.bttnSaveQR.Text = "Save";
-            this.bttnSaveQR.UseVisualStyleBackColor = true;
+            this.txtFile.Location = new System.Drawing.Point(330, 190);
+            this.txtFile.Name = "txtFile";
+            this.txtFile.Size = new System.Drawing.Size(490, 31);
+            this.txtFile.TabIndex = 9;
+            // 
+            // bttnOpen
+            // 
+            this.bttnOpen.Location = new System.Drawing.Point(190, 190);
+            this.bttnOpen.Name = "bttnOpen";
+            this.bttnOpen.Size = new System.Drawing.Size(112, 34);
+            this.bttnOpen.TabIndex = 8;
+            this.bttnOpen.Text = "Open File";
+            this.bttnOpen.UseVisualStyleBackColor = true;
+            this.bttnOpen.Click += new System.EventHandler(this.bttnOpen_Click);
             // 
             // bttnBackQR
             // 
-            this.bttnBackQR.Location = new System.Drawing.Point(60, 520);
+            this.bttnBackQR.Location = new System.Drawing.Point(50, 530);
             this.bttnBackQR.Name = "bttnBackQR";
             this.bttnBackQR.Size = new System.Drawing.Size(112, 34);
             this.bttnBackQR.TabIndex = 6;
             this.bttnBackQR.Text = "Back";
             this.bttnBackQR.UseVisualStyleBackColor = true;
             this.bttnBackQR.Click += new System.EventHandler(this.bttnBackQR_Click);
-            // 
-            // txtQRResult
-            // 
-            this.txtQRResult.Location = new System.Drawing.Point(680, 250);
-            this.txtQRResult.Multiline = true;
-            this.txtQRResult.Name = "txtQRResult";
-            this.txtQRResult.Size = new System.Drawing.Size(480, 100);
-            this.txtQRResult.TabIndex = 5;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(200, 100);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(68, 25);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "Device:";
-            // 
-            // cbDevices
-            // 
-            this.cbDevices.FormattingEnabled = true;
-            this.cbDevices.Location = new System.Drawing.Point(290, 100);
-            this.cbDevices.Name = "cbDevices";
-            this.cbDevices.Size = new System.Drawing.Size(210, 33);
-            this.cbDevices.TabIndex = 2;
-            // 
-            // pbCamDisplay
-            // 
-            this.pbCamDisplay.Location = new System.Drawing.Point(210, 160);
-            this.pbCamDisplay.Name = "pbCamDisplay";
-            this.pbCamDisplay.Size = new System.Drawing.Size(320, 320);
-            this.pbCamDisplay.TabIndex = 1;
-            this.pbCamDisplay.TabStop = false;
             // 
             // label17
             // 
@@ -576,18 +541,14 @@
             this.dgvContactList.Size = new System.Drawing.Size(1100, 350);
             this.dgvContactList.TabIndex = 0;
             // 
-            // timerQR
-            // 
-            this.timerQR.Interval = 1000;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1258, 664);
-            this.Controls.Add(this.pnlQR);
             this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.pnlQR);
             this.Controls.Add(this.pnlList);
             this.Controls.Add(this.pnlSurvey);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -600,7 +561,6 @@
             this.pnlSurvey.PerformLayout();
             this.pnlQR.ResumeLayout(false);
             this.pnlQR.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCamDisplay)).EndInit();
             this.pnlList.ResumeLayout(false);
             this.pnlList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
@@ -649,14 +609,10 @@
         private TextBox txtSearch;
         private TextBox textBox1;
         private Button bttnBackQR;
-        private TextBox txtQRResult;
-        private Label label18;
-        private ComboBox cbDevices;
-        private PictureBox pbCamDisplay;
         private Label label17;
-        private Button bttnSaveQR;
-        private System.Windows.Forms.Timer timerQR;
-        private Label label19;
-        private Button bttnScanQR;
+        private Button bttnOpen;
+        private TextBox txtResult;
+        private TextBox txtFile;
+        private Button bttnSaveResult;
     }
 }

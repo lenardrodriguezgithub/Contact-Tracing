@@ -9,11 +9,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
-using AForge.Video;
-using AForge.Video.DirectShow;
-using AForge.Imaging;
-using AForge.Imaging.Filters;
-using AForge;
+using System.Diagnostics;
 using IronBarCode;
 
 namespace Contact_Tracing
@@ -24,8 +20,7 @@ namespace Contact_Tracing
         {
             InitializeComponent();
         }
-        FilterInfoCollection VideoCaptureDevices;
-        VideoCaptureDevice FinalVideo;
+
         DataTable table = new DataTable();
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,48 +32,6 @@ namespace Contact_Tracing
             table.Columns.Add("Type", typeof(string));
             table.Columns.Add("Date", typeof(string));
             dgvContactList.DataSource = table;
-
-            VideoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices)
-            {
-                cbDevices.Items.Add(VideoCaptureDevice.Name);
-            }
-            cbDevices.SelectedIndex = 0;
-        }
-
-        private void bttnScanQR_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if(FinalVideo.IsRunning == false)
-                {
-                    FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[cbDevices.SelectedIndex].MonikerString);
-                    FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
-                    FinalVideo.Start();
-                    bttnQR.Text = "Stop";
-                }
-                else
-                {
-                    FinalVideo.Stop();
-                    bttnQR.Text = "Scan QR";
-                }
-            }
-            catch
-            {
-                MessageBox.Show("There was an error!", "Error Message");
-                txtQRResult.Clear();
-                pnlSurvey.Visible = false;
-                pnlMenu.Visible = true;
-                pnlList.Visible = false;
-                pnlQR.Visible = false;
-            }
-
-        }
-
-        void FinalVideo_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            Bitmap video = (Bitmap)eventArgs.Frame.Clone();
-            pbCamDisplay.Image = video;
         }
 
         public string? Name;
@@ -145,6 +98,53 @@ namespace Contact_Tracing
             DataView dv = table.DefaultView;
             dv.RowFilter = "Name LIKE '" + txtSearch.Text + "%'";
             dgvContactList.DataSource = dv;
+        }
+
+        private void bttnOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Open an Image File";
+            ofd.Filter = "All Files (*.*) | *.*";
+            DialogResult dr = ofd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    txtFile.Text = ofd.SafeFileName;
+                    BarcodeResult Result = BarcodeReader.
+                        QuicklyReadOneBarcode(ofd.FileName,
+                        BarcodeEncoding.QRCode | BarcodeEncoding.Code128, true);
+                    txtResult.Text = Result.ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("There was an error!", "Error Message");
+                }
+
+            }
+        }
+
+        private void bttnSaveResult_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(txtResult.Text != null)
+                {
+                    StreamWriter sw = new StreamWriter(Application.StartupPath +
+                    "\\Contact\\" + "ContactTracing.txt", append: true);
+                    sw.WriteLine(txtResult.Text);
+                    sw.Flush();
+                    sw.Close();
+                    MessageBox.Show("Details saved.", "Message");
+                    pnlSurvey.Visible = false;
+                    pnlMenu.Visible = true;
+                    pnlList.Visible = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("There was an erorr.", "Error Message");
+            }
         }
 
         private void bttnSave_Click(object sender, EventArgs e)
@@ -218,14 +218,12 @@ namespace Contact_Tracing
 
         private void bttnBackQR_Click(object sender, EventArgs e)
         {
-            txtQRResult.Clear();
             pnlSurvey.Visible = false;
             pnlMenu.Visible = true;
             pnlList.Visible = false;
             pnlQR.Visible = false;
         }
 
-        
     }
 
 
